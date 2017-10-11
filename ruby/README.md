@@ -42,11 +42,8 @@ Everything is an object (well almost everything -- blocks aren't and neither are
  [9] pry(main)> Cat.superclass
  => Object
 
- [10] pry(main)> 7.methods
- => [:%,
- :&,
- :*,
- ...
+ [10] pry(main)> 7.class
+ => Fixnum
  [11] pry(main)> 7.class.superclass.superclass.superclass.superclass
  => BasicObject
 
