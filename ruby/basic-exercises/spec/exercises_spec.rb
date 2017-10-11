@@ -54,3 +54,31 @@ describe Array do
     end
   end
 end
+
+describe 'fizz_buzz' do
+  it "should return fizz-buzzified numbers up to the max in an array" do
+    result = fizz_buzz(16)
+    expect(result).to eq([
+      1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13,
+      14, "FizzBuzz", 16
+    ])
+  end
+end
+
+describe 'fibonacci' do
+  it "should return the first n fibonacci numbers in an array" do
+    expect(fibonacci(1)).to eq([1])
+    expect(fibonacci(2)).to eq([1, 1])
+    expect(fibonacci(3)).to eq([1, 1, 2])
+    expect(fibonacci(10)).to eq([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+  end
+end
+
+describe 'merge_sort' do
+  it "sorts an array" do
+    100.times do
+      result = merge_sort([1, 2, 3, 4, 5, 6, 7].shuffle)
+      expect(result).to eq([1, 2, 3, 4, 5, 6, 7])
+    end
+  end
+end
