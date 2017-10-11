@@ -108,7 +108,7 @@ end
 def merge(left, right)
   result = []
 
-  while !left.empty? && !right.empty?
+  until left.empty? || right.empty?
     if left.first < right.first
       result << left.shift
     else
