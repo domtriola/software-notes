@@ -5,7 +5,8 @@
 [Official Site](https://www.ruby-lang.org/en/)
 
 * [Install Ruby](https://www.ruby-lang.org/en/downloads/)
-* Run code in your terminal: `ruby code.rb`
+* Execute a ruby file: `ruby code.rb`
+* Run ruby in an interpreter: `irb` (or `pry` for a better experience)
 * Use gems to enhance projects: `gem install GEMNAME`
 * Use [Bundler](http://bundler.io/) to manage your gems
 
