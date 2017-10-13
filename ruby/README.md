@@ -23,31 +23,32 @@ Ruby is an object-oriented language that is pleasantly concise and human-readabl
 Well almost everything -- blocks aren't objects and neither are general language constructs like 'if'. You can trace every object back to the BasicObject class.
 
 ```ruby
- [1] pry(main)> class Cat
- [1] pry(main)* end  
- => nil
- [2] pry(main)> whiskers = Cat.new
- => #<Cat:0x007ffc739efa58>
- [3] pry(main)> whiskers.class
- => Cat
- [4] pry(main)> Cat.class
- => Class
- [5] pry(main)> Class.class
- => Class
- [6] pry(main)> Class.superclass
- => Module
- [7] pry(main)> Module.superclass
- => Object
- [8] pry(main)> Object.superclass
- => BasicObject
- [9] pry(main)> Cat.superclass
- => Object
+class Cat
+end
 
- [10] pry(main)> 7.class
- => Fixnum
- [11] pry(main)> 7.class.superclass.superclass.superclass.superclass
- => BasicObject
+whiskers = Cat.new      # => #<Cat:0x007ffc739efa58>
+whiskers.class          # => Cat
+Cat.class               # => Class
+Class.class             # => Class
+Class.superclass        # => Module
+Module.superclass       # => Object
+Object.superclass       # => BasicObject
+Cat.superclass          # => Object
 
+1.class
+# => Fixnum
+1.class.superclass.superclass.superclass.superclass  
+# => BasicObject
+
+''.class
+# => String
+''.class.superclass.superclass
+# => BasicObject
+
+:*.class
+# => Symbol
+:*.class.superclass.superclass
+# => BasicObject
 ```
 
 ### Blocks, Procs, and Lambdas
@@ -80,7 +81,7 @@ double.call(4)
 # => [2, 4, 6]
 ```
 
-### Lambdas
+#### Lambdas
 
 Lamdas are procs that behave a bit differently.
 
