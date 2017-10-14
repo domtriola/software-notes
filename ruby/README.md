@@ -6,6 +6,9 @@
   * [Everything is an Object](#everything-is-an-object)
   * [Blocks, Procs, and Lambdas](#blocks-procs-and-lambdas)
   * [Metaprogramming](#metaprogramming)
+* [Pros and Cons](#pros-and-cons)
+  * [Pros](#pros)
+  * [Cons](#cons)
 
 ## Overview
 
@@ -135,3 +138,17 @@ See the [full example](./involved-exercises/lambda.rb).
 ### Metaprogramming
 
 See the [involved exercise](./involved-exercises/metaprogramming) on metaprogramming in Ruby
+
+## Pros and Cons
+
+### Pros
+
+* Really enjoyable to write code with (imho)
+* High developer productivity
+* It's easy of use makes it great for writing scripting tasks -- not needing to worry about tedious language implementation details makes it a great tool for tackling tedious tasks. I've used ruby scripts for many would-be-tedious non-programming tasks (like formatting a list of a several dozen items), because it usually ends up being quicker and more enjoyable than just doing the work manually.
+* The Rails framework lets you spin up basic applications in a matter of minutes and build new features crazy fast
+
+### Cons
+
+* Low performance -- the features that makes it efficient for development make it inherently difficult to optimize for runtime efficiency.
+* OOP -- I've found object-oriented programming great for creating simple intuitive programs, but the larger and more complex an application gets the harder it becomes to maintain and debug, because so many things in the application will wrap states that frequently change. It's also hard to test, because for total test coverage you end up needing to write a lot of integration tests, which are harder to craft than unit tests, and can make your code difficult to change in the future.
