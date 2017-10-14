@@ -1,5 +1,12 @@
 # Ruby
 
+* [Overview](#overview)
+* [Getting Started](#getting-started)
+* [Key Features](#key-features)
+  * [Everything is an Object](#everything-is-an-object)
+  * [Blocks, Procs, and Lambdas](#blocks-procs-and-lambdas)
+  * [Metaprogramming](#metaprogramming)
+
 ## Overview
 
 Ruby is an object-oriented language that is pleasantly concise and human-readable. Ruby's emphasis is on developer joy, and it has become a popular choice for commercial web projects. The Rails framework is a great tool to quickly spin up web applications. Ruby is not heavily opinionated about how to express things with the language, allowing you to decide your own code style. The Rails framework is more opinionated, preferring convention over configuration. This is opposite of Python (another strongly typed, dynamic language with a similar concise feel), which has the philosophy of 'one right way to do things' in the language, but frameworks like Django leave the configuration up to you.
@@ -124,3 +131,7 @@ def instantiate_board(grid)
 end
 ```
 See the [full example](./involved-exercises/lambda.rb).
+
+### Metaprogramming
+
+See the [involved exercise](./involved-exercises/metaprogramming) on metaprogramming in Ruby
