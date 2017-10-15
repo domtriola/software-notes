@@ -12,7 +12,7 @@
 
 ## Overview
 
-Ruby is an object-oriented language that is pleasantly concise and human-readable. Ruby's emphasis is on developer joy, and it has become a popular choice for commercial web projects. The Rails framework is a great tool to quickly spin up web applications. Ruby is not heavily opinionated about how to express things with the language, allowing you to decide your own code style. The Rails framework is more opinionated, preferring convention over configuration. This is opposite of Python (another strongly typed, dynamic language with a similar concise feel), which has the philosophy of 'one right way to do things' in the language, but frameworks like Django leave the configuration up to you.
+Ruby is an object-oriented language that is pleasantly concise and human-readable. Ruby's emphasis is on developer joy, and it has become a popular choice for commercial web projects. The Rails framework is a great tool to quickly spin up web applications. Ruby is not heavily opinionated about how to express things with the language, allowing you to decide your own code style. The Rails framework is more opinionated, preferring convention over configuration. This is opposite of Python (another strongly typed, dynamic language with a similar syntactical feel), which has the philosophy of 'one right way to do things' in the language, but frameworks like Django leave the configuration up to you.
 
 ## Getting Started
 
@@ -151,4 +151,4 @@ See the [involved exercise](./involved-exercises/metaprogramming) on metaprogram
 ### Cons
 
 * Low performance -- the features that makes it efficient for development make it inherently difficult to optimize for runtime efficiency.
-* OOP -- I've found object-oriented programming great for creating simple intuitive programs, but the larger and more complex an application gets the harder it becomes to maintain and debug, because so many things in the application will wrap states that frequently change. It's also hard to test, because for total test coverage you end up needing to write a lot of integration tests, which are harder to craft than unit tests, and can make your code difficult to change in the future.
+* Concurrency is not Ruby's strong suit. The [Ruby MRI](https://en.wikipedia.org/wiki/Ruby_MRI) has a [Global Interpreter Lock](https://en.wikipedia.org/wiki/Global_interpreter_lock) (GIL), which makes parallelism impossible. However, there are other Ruby interpreters that don't implement the GIL: [JRuby](https://en.wikipedia.org/wiki/JRuby) (a Java implementation) and [Rubinius](https://en.wikipedia.org/wiki/Rubinius) (implemented with C++ and Ruby itself). And there are several libraries that provide more rich concurrency tools for Ruby. Here's one of them: [Concurrent Ruby](https://github.com/ruby-concurrency/concurrent-ruby)
