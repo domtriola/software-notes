@@ -12,7 +12,7 @@
 
 ## Overview
 
-Ruby is an object-oriented language that is pleasantly concise and human-readable. Ruby's emphasis is on developer joy, and it has become a popular choice for commercial web projects. The Rails framework is a great tool to quickly spin up web applications. Ruby is not heavily opinionated about how to express things with the language, allowing you to decide your own code style. The Rails framework is more opinionated, preferring convention over configuration. This is opposite of Python (another strongly typed, dynamic language with a similar syntactical feel), which has the philosophy of 'one right way to do things' in the language, but frameworks like Django leave the configuration up to you.
+Ruby is an object-oriented language that is pleasantly concise and human-readable. Ruby's emphasis is on developer joy, and it has become a popular choice for commercial web projects. The [Rails framework](http://rubyonrails.org/) is a great tool to quickly spin up web applications. Ruby is not heavily opinionated about how to express things with the language, allowing you to decide your own code style. The Rails framework is more opinionated, preferring convention over configuration. This is opposite of Python (another strongly typed, dynamic language with a similar syntactical feel), which has the philosophy of 'one right way to do things' in the language, but frameworks like Django leave the configuration up to you.
 
 ## Getting Started
 
