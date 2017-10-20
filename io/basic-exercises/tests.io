@@ -30,3 +30,7 @@ fizzBuzz(16) println
 fibonacci(1) println # => list(1)
 fibonacci(2) println # => list(1, 1)
 fibonacci(8) println # => list(1, 1, 2, 3, 5, 8, 13, 21)
+
+# Merge Sort
+mergeSort(list(9, 8, 7, 1, 4, 3, 2, 5, 6)) println
+# => list(1, 2, 3, 4, 5, 6, 7, 8, 9)

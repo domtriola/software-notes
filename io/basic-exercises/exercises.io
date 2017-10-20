@@ -73,3 +73,30 @@ fibonacci := method(n,
 
   result
 )
+
+
+# Merge Sort
+mergeSort := method(_list,
+  (_list size < 2) ifTrue(return _list)
+
+  mid := (_list size / 2) floor
+
+  left := _list slice(0, mid)
+  right := _list slice(mid, _list size)
+
+  merge(mergeSort(left), mergeSort(right))
+)
+
+merge := method(left, right,
+  result := list()
+
+  while(left isEmpty not and right isEmpty not,
+    (left first < right first) ifTrue(
+      result append(left removeAt(0))
+    ) ifFalse (
+      result append(right removeAt(0))
+    )
+  )
+
+  result union(left union(right))
+)
