@@ -59,3 +59,17 @@ fizzBuzz := method(max,
 
   result
 )
+
+
+# Fibonacci
+fibonacci := method(n,
+  result := list(1, 1)
+
+  if(n < 3, return result slice(2 - n))
+
+  for(i, 2, n - 1,
+    result append(result at(i - 1) + result at(i - 2))
+  )
+
+  result
+)
