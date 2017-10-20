@@ -43,6 +43,9 @@ Object type
 # Check an object's prototype
 Object proto
 
+# List the core objects
+Lobby Protos Core slotNames
+
 # Use doFile like an importer when running io scripts
 # Imports relative to wherever command is run
 doFile("exercises.io")
