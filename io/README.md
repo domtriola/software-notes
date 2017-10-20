@@ -30,6 +30,7 @@ My first impression of Io wasn't great. The documentation is sparse, and it's qu
 ### Lack of Documentation
 
 Io's documentation is sparse. But it does have a lot of helpful introspection. I'm including "Lack of Documentation" as a feature mostly just so I can have a place to keep notes on the various introspection tools, as well as other miscellaneous information that I had a difficult time finding on my own.
+
 ```io
 # See every named object that you have created
 Lobby
@@ -47,15 +48,16 @@ Object proto
 Lobby Protos Core slotNames
 
 # Use doFile like an importer when running io scripts
-# Imports relative to wherever command is run
+# doFile imports relative to wherever command is run
 doFile("exercises.io")
-# Imports relative to file the import is in
+# doRelativeFile imports relative to file the import is in
 doRelativeFile("exercises.io")
 ```
 
 ### Prototypal Inheritance
 
 Everything is an object and only an object (there are no classes). Objects are just collections of "slots", which contain more objects. New objects are created by cloning existing objects (prototypes). If a message is sent to an object and the object doesn't know how to respond it forwards the message to its prototype.
+
 ```io
 Canis := Object clone
 Canis description := "A scary creature with prominent canine teeth"
@@ -73,6 +75,8 @@ rufus type println          # => Canis
 rufus description println   # => A scary creature with prominent canine teeth
 ```
 
+![Scary Fangs](./images/scary_fangs.jpeg)
+
 ### Messages and Receivers
 
 Interactions with objects are messages. Io's syntax is very minimal. Even expressions like "if" and "for" are just messages that objects respond to.
@@ -80,6 +84,7 @@ Interactions with objects are messages. Io's syntax is very minimal. Even expres
 ### Metaprogramming
 
 Io lends itself well to metaprogramming, because it doesn't have much of a limit on what you can change.
+
 ```io
 # Let's add a NAND gate as a basic operator.
 
