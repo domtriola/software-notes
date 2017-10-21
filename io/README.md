@@ -62,7 +62,7 @@ Everything is an object and only an object (there are no classes). Objects are j
 Canis := Object clone
 Canis description := "A scary creature with prominent canine teeth"
 Lupus := Canis clone
-rufus := Canis clone
+rufus := Lupus clone
 
 Canis type println          # => Canis
 Canis slotNames println     # => list(type, description)
