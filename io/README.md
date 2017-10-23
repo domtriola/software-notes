@@ -9,9 +9,9 @@
 
 ## Overview
 
-The language is syntactically very simple.
+Io is a prototypal language in which every action is a messages. Just about everything is an object, and everything happens by sending messages to objects.
 
-My first impression of Io wasn't great. The documentation is sparse, and it's quite difficult to look up information online, partly because the name "Io" is not the easiest to find relevant results for in a search engine, and partly because there's just not that much information out there. This makes it a frustrating language to work with, unless you're up to the task of diving into the source code.
+My first impression of Io wasn't great. The documentation is sparse, and it's quite difficult to look up information online, partly because the name "Io" is not the easiest to find relevant results for in a search engine, and partly because there's just not that much information out there. This can make it a frustrating language to work with. However, Io is syntactically quite simple, and it does have a lot of helpful introspection tools that help mitigate against the lack of thorough documentation.
 
 ## Getting Started
 
@@ -47,6 +47,12 @@ Object proto
 # List the core objects
 Lobby Protos Core slotNames
 
+# Get the value of a slot without invoking it
+Object getSlot("slotName")
+
+# Use "code" to return a normalized string representation of a method
+method(el, i, el * i) code
+
 # Use doFile like an importer when running io scripts
 # doFile imports relative to wherever command is run
 doFile("exercises.io")
@@ -79,7 +85,37 @@ rufus description println   # => A scary creature with prominent canine teeth
 
 ### Messages and Receivers
 
-Interactions with objects are messages. Io's syntax is very minimal. Even expressions like "if" and "for" are just messages that objects respond to.
+All actions are messages. Even expressions like "if" and "for" are just messages that objects respond to. Messages have a sender, a target, and arguments.
+
+```io
+# Helpful message keywords can be accessed from an object's "call" slot:
+message
+sender
+target
+
+# Using message introspection to write an until loop
+until := method(
+  while(call sender doMessage(call message argAt(0)) not,
+    call sender doMessage(call message argAt(1))
+  )
+)
+
+i := 0
+until(i == 3,
+  i println
+  i := i + 1
+)
+# => 0
+# => 1
+# => 2
+
+# And if you're into the whole brevity thing, the until method could also be written as:
+until := method(
+  while(call evalArgAt(0) not,
+    call evalArgAt(1)
+  )
+)
+```
 
 ### Metaprogramming
 
