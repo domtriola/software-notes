@@ -27,9 +27,9 @@ My first impression of Io wasn't great. The documentation is sparse, and it's qu
 * **Programming Paradigm**: Prototypal - Object-oriented
 * **Typing Discipline**: Dynamic - Strong
 
-### Lack of Documentation
+### Introspection
 
-Io's documentation is sparse. But it does have a lot of helpful introspection. I'm including "Lack of Documentation" as a feature mostly just so I can have a place to keep notes on the various introspection tools, as well as other miscellaneous information that I had a difficult time finding on my own.
+Io's documentation is sparse. But it does have a lot of helpful introspection methods.
 
 ```io
 # See every named object that you have created
@@ -52,12 +52,6 @@ Object getSlot("slotName")
 
 # Use "code" to return a normalized string representation of a method
 method(el, i, el * i) code
-
-# Use doFile like an importer when running io scripts
-# doFile imports relative to wherever command is run
-doFile("exercises.io")
-# doRelativeFile imports relative to file the import is in
-doRelativeFile("exercises.io")
 ```
 
 ### Prototypal Inheritance
