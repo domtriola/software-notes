@@ -2,13 +2,5 @@
 
 This is a compilation of notes on various programming languages that I have explored.
 
-
-## Object Oriented
-
+* [Io](io)
 * [Ruby](ruby)
-
-
-## Functional
-
-
-## Prototypal
