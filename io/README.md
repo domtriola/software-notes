@@ -7,6 +7,7 @@
   * [Prototypal Inheritance](#prototypal-inheritance)
   * [Messages and Receivers](#messages-and-receivers)
   * [Metaprogramming](#metaprogramming)
+  * [Concurrency](#concurrency)
 * [Pros and Cons](#pros-and-cons)
   * [Pros](#pros)
   * [Cons](#cons)
