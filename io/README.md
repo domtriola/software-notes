@@ -7,6 +7,7 @@
   * [Prototypal Inheritance](#prototypal-inheritance)
   * [Messages and Receivers](#messages-and-receivers)
   * [Metaprogramming](#metaprogramming)
+  * [Concurrency](#concurrency)
 * [Pros and Cons](#pros-and-cons)
   * [Pros](#pros)
   * [Cons](#cons)
@@ -117,7 +118,7 @@ until := method(
 
 ### Metaprogramming
 
-Io lends itself well to metaprogramming, because it doesn't have much of a limit on what you can change.
+Io lends itself well to metaprogramming, because it doesn't have much of a limit on what you can change. You can extend, or completely rewrite any of its core methods.
 
 ```io
 # Let's add a NAND gate as a basic operator.
@@ -143,8 +144,72 @@ false nand true        # => true
 
 ```
 
+### Concurrency
+
+Io uses coroutines, actors, and futures to implement concurrent behavior. Coroutines are functions that can yield to other processes. Actors process messages in queues with coroutines. Futures are like placeholder objects that will be assigned a value when a concurrent process finishes. An object becomes an actor whenever an asynchronous message is sent to it.
+
+```io
+countToMillion := method(
+  number := 0
+  for(i, 0, 1000000, number = i)
+  return number
+)
+
+countToHalfMillion := method(
+  number := 0
+  for(i, 0, 500000, number = i)
+  return number
+)
+
+countSync := method(
+  "Starting synchronous count..." println
+  result := countToMillion
+  "We waited for the count before resuming" println
+
+  result println
+)
+
+# firstHalf and secondHalf are each assigned as a FutureProxy by calling
+# countToHalfMillion asynchronously with '@'. Functions can also be called
+# asynchronously with '@@' which immediately returns nil instead of a future.
+countAsync := method(
+  "Starting asynchronous count..." println
+  firstHalf := @countToHalfMillion
+  secondHalf := @countToHalfMillion
+  "Counting..." println
+
+  # If we don't interpolate and instead try `firstHalf + secondHalf` we'll get:
+  # Exception: argument 0 to method '+' must be a Number, not a 'FutureProxy'
+  "#{firstHalf} + #{secondHalf} = #{firstHalf + secondHalf}" interpolate println
+)
+
+Date secondsToRun(countSync) println
+"" println
+Date secondsToRun(countAsync) println
+
+# Starting synchronous count...
+# <1.7 second delay>
+# We waited for the count before resuming
+# 1000000
+# 1.751409
+#
+# Starting asynchronous count...
+# Counting...
+# <1.7 second delay>
+# 500000 + 500000 = 1000000
+# 1.7431449999999999
+```
+
+I was hoping to see the asynchronous example take half the time as the synchronous example, but it appears the actors did not execute the messages in parallel.
+
 ## Pros and Cons
 
 ### Pros
 
+* Simple and easy to learn syntax
+
 ### Cons
+
+* Small community and lack of thorough documentation. This is the biggest con for me. The absence of documentation for most of Io's core methods and functionality was frustrating and tasks that should have been trivial turned into daunting scavenger hunts for information on how particular aspects of the language work.
+* Simple syntax. The syntax was easy to learn, but I have found Io programs to have poor human-readability.
+* Poor performance. This is only one specific comparison, but in the concurrency example it took Io almost 2 seconds to count to 1 million. Doing the same thing in Ruby or Python (both languages that are already on the lower end of the performance spectrum) takes closer to .2 seconds.
