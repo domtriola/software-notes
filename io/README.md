@@ -200,8 +200,6 @@ Date secondsToRun(countAsync) println
 # 1.7431449999999999
 ```
 
-I was hoping to see the asynchronous example take half the time as the synchronous example, but it appears the actors did not execute the messages in parallel.
-
 ## Pros and Cons
 
 ### Pros
