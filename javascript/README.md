@@ -42,3 +42,5 @@
 ### Pros
 
 ### Cons
+
+* https://www.destroyallsoftware.com/talks/wat
