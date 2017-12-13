@@ -1,7 +1,7 @@
 const assert = require('assert');
 const sinon = require('sinon');
 
-require('./exercises.js');
+const { unique } = require('./exercises.js');
 
 describe('Array', () => {
   describe('#myEach()', () => {
@@ -35,5 +35,21 @@ describe('Array', () => {
 
       assert.equal(result, 10);
     });
+  });
+});
+
+describe('unique()', () => {
+  it('should return an empty array if given an empty array', () => {
+    const array = [];
+    const result = unique(array);
+
+    assert.deepEqual(result, []);
+  });
+
+  it('should reduce duplicates', () => {
+    const array = [1, 2, 2, 3, 4, 3, 5];
+    const result = unique(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4, 5]);
   });
 });
