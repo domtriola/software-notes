@@ -30,8 +30,23 @@ const unique = array => {
   }
 
   return result;
-}
+};
+
+// Flatten - functional approach
+const flatten = (array, result = []) => {
+  const retrieveHead = el => Array.isArray(el) ? el[0] : el;
+  const retrieveTail = el => Array.isArray(el) ? el.slice(1) : [];
+  const flattenIfArray = el => Array.isArray(el) ? flatten(el) : el;
+
+  const head = retrieveHead(array);
+  const tail = retrieveTail(array);
+
+  return array.length > 0 ?
+    flatten(tail, result.concat(flattenIfArray(head))) :
+    result;
+};
 
 module.exports = {
-  unique
+  unique,
+  flatten
 };

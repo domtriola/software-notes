@@ -1,7 +1,7 @@
 const assert = require('assert');
 const sinon = require('sinon');
 
-const { unique } = require('./exercises.js');
+const { unique, flatten } = require('./exercises.js');
 
 describe('Array', () => {
   describe('#myEach()', () => {
@@ -51,5 +51,28 @@ describe('unique()', () => {
     const result = unique(array);
 
     assert.deepEqual(result, [1, 2, 3, 4, 5]);
+  });
+});
+
+describe('flatten()', () => {
+  it('should return the same array if it is one-dimensional', () => {
+    const array = [1, 2, 3, 4];
+    const result = flatten(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4]);
+  });
+
+  it('should flatten a two-dimensional array', () => {
+    const array = [1, [2, 3, 4]];
+    const result = flatten(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4]);
+  });
+
+  it('should flatten a multi-dimensional array', () => {
+    const array = [1, [[2], [3, 4, []]]];
+    const result = flatten(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4]);
   });
 });
