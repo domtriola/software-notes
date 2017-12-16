@@ -1,7 +1,7 @@
 const assert = require('assert');
 const sinon = require('sinon');
 
-const { unique, flatten } = require('./exercises.js');
+const { unique, flatten, fizzBuzz } = require('./exercises.js');
 
 describe('Array', () => {
   describe('#myEach()', () => {
@@ -74,5 +74,17 @@ describe('flatten()', () => {
     const result = flatten(array);
 
     assert.deepEqual(result, [1, 2, 3, 4]);
+  });
+});
+
+describe('fizzBuzz()', () => {
+  it('should return an array with fizz-buzzified numbers', () => {
+    const result = fizzBuzz(20);
+
+    assert.deepEqual(
+      result,
+      [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13,
+       14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz']
+    );
   });
 });
