@@ -1,7 +1,12 @@
 const assert = require('assert');
 const sinon = require('sinon');
 
-const { unique, flatten, fizzBuzz } = require('./exercises.js');
+const {
+  unique,
+  flatten,
+  fizzBuzz,
+  fibonacci,
+} = require('./exercises.js');
 
 describe('Array', () => {
   describe('#myEach()', () => {
@@ -86,5 +91,27 @@ describe('fizzBuzz()', () => {
       [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13,
        14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz']
     );
+  });
+});
+
+describe('fibonacci()', () => {
+  it('should return an empty array when n is 0', () => {
+    const result = fibonacci(0);
+
+    assert.deepEqual(result, []);
+  });
+
+  it('should return the correct result for n < 3', () => {
+    const result = fibonacci(1);
+    const result2 = fibonacci(2);
+
+    assert.deepEqual(result, [1]);
+    assert.deepEqual(result2, [1, 1]);
+  });
+
+  it('should return the correct result for larger values of n', () => {
+    const result = fibonacci(10);
+
+    assert.deepEqual(result, [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
   });
 });

@@ -60,8 +60,22 @@ function fizzBuzz(max) {
   return result;
 }
 
+// Fibbonacci
+function fibonacci(n) {
+  const result = [1, 1];
+
+  if (n < 3) return result.slice(0, n);
+
+  for (let i = 2; i < n; i++) {
+    result.push(result[i - 1] + result[i - 2]);
+  }
+
+  return result;
+}
+
 module.exports = {
   unique,
   flatten,
   fizzBuzz,
+  fibonacci,
 };
