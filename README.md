@@ -1,6 +1,3 @@
-# Language Library
+# Software Notes
 
-This is a compilation of notes on various programming languages that I have explored.
-
-* [Io](io)
-* [Ruby](ruby)
+* [Programming Languages](languages)
