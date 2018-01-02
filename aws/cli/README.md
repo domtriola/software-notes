@@ -1,4 +1,4 @@
-# AWS CLI
+# Command Line Interface (CLI)
 
 ## CLI Setup
 

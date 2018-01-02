@@ -1,4 +1,4 @@
-# ECS
+# Elastic Container Service (ECS)
 
 * [Component Documentation](#component-documentation)
 * [Cluster Setup](#cluster-setup)

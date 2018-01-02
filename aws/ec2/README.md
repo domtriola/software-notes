@@ -1,4 +1,4 @@
-# EC2
+# Elastic Compute Cloud (EC2)
 
 ## Pre-launch Setup from CLI
 
