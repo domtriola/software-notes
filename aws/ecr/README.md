@@ -13,7 +13,6 @@
 * Tag local image: `docker tag IMAGE REPOSITORYURI`
 * Push local images to tagged repo: `docker push REPOSITORYURI`
 
-
 ## Deleting Repository
 
 Delete repo: `aws ecr delete-repository --repository-name REPONAME --force`

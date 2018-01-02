@@ -35,9 +35,9 @@
 * List: `aws ecs list-clusters`
 * Create: `aws ecs create-cluster --cluster-name CLUSTERNAME`
 * Info: `aws ecs describe-clusters --clusters CLUSTERNAME`
-* Delete: `aws ecs delete-cluster --clusters CLUSTERNAME`
 * List instances in a cluster: `aws ecs list-container-instances --cluster CLUSTERNAME`
 * Describe container instance: `aws ecs describe-container-instances --cluster CLUSTERNAME --container-instances ARN`
+* Delete: `aws ecs delete-cluster --clusters CLUSTERNAME`
 
 ### Task Definitions
 

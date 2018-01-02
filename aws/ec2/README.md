@@ -7,3 +7,7 @@
 * Verify that the key pair works: `aws ec2 describe-key-pairs --key-name KEYNAME`
 * Create a general access security group: `aws ec2 create-security-group --group-name GROUPNAME --description "DESCRIPTION"` (I used 'SERVICENAME-general-access' for the GROUPNAME)
 * Open ports in the security group: `aws ec2 authorize-security-group-ingress --group-id GROUPID --protocol tcp --port PORTNUMBER --cidr 0.0.0.0/0`
+
+## Commands
+
+* Terminate instances: `aws ec2 terminate-instances --instance-ids INSTANCEID`
