@@ -1,0 +1,15 @@
+# Elixir latest: https://hub.docker.com/_/elixir/
+FROM elixir
+
+# Install hex package manager
+RUN mix local.hex --force
+
+# Install rebar build tool
+RUN mix local.rebar --force
+
+# Install Phoenix latest
+RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+
+# Install NodeJS 9.x and NPM if using brunch
+# RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
+# RUN apt-get install -y nodejs
