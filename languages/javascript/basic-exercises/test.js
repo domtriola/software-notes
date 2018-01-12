@@ -6,6 +6,7 @@ const {
   flatten,
   fizzBuzz,
   fibonacci,
+  mergeSort,
 } = require('./exercises.js');
 
 describe('Array', () => {
@@ -113,5 +114,44 @@ describe('fibonacci()', () => {
     const result = fibonacci(10);
 
     assert.deepEqual(result, [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
+  });
+});
+
+describe('mergeSort()', () => {
+  it('should sort an empty array', () => {
+    const result = mergeSort([]);
+
+    assert.deepEqual(result, []);
+  });
+
+  it('should sort an already sorted array', () => {
+    const result = mergeSort([1, 2, 3, 4, 5]);
+
+    assert.deepEqual(result, [1, 2, 3, 4, 5]);
+  });
+
+  it('should sort a reversed array', () => {
+    const result = mergeSort([5, 4, 3, 2, 1]);
+
+    assert.deepEqual(result, [1, 2, 3, 4, 5]);
+  });
+
+  it('should sort a shuffled array', () => {
+    // Fisher–Yates shuffle
+    const shuffle = array => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+
+      return array;
+    };
+
+    for (let i = 0; i < 10; i++) {
+      const result = mergeSort(shuffle([1, 2, 3, 4, 5]));
+
+      assert.deepEqual(result, [1, 2, 3, 4, 5]);
+    }
+
   });
 });

@@ -73,9 +73,35 @@ function fibonacci(n) {
   return result;
 }
 
+// Merge Sort
+function mergeSort(array) {
+  if (array.length < 2) return array;
+
+  const mid = Math.floor(array.length / 2);
+  const left = array.slice(0, mid);
+  const right = array.slice(mid, array.length);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  const result = [];
+
+  while (left.length > 0 && right.length > 0) {
+    if (left[0] < right[0]) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
+    }
+  }
+
+  return result.concat(left.concat(right));
+}
+
 module.exports = {
   unique,
   flatten,
   fizzBuzz,
   fibonacci,
+  mergeSort,
 };
