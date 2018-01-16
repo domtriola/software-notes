@@ -6,9 +6,9 @@
 
 ## Images
 
-List: `docker images`
-Remove: `docker rmi ID`
-Remove all dangling images: `docker images -q -f dangling=true | xargs docker rmi`
+* List: `docker images`
+* Remove: `docker rmi ID`
+* Remove all dangling images: `docker images -q -f dangling=true | xargs docker rmi`
 
 ### Building an Image
 
@@ -22,8 +22,8 @@ Remove all dangling images: `docker images -q -f dangling=true | xargs docker rm
 
 ## Containers
 
-List: `docker ps`
-Remove: `docker rm ID`
-Remove all stopped containers: `docker ps -aq --no-trunc -f status=exited | xargs docker rm`
-Enter a bash session from an image: `docker run -it IMAGEID bash`
-Enter a bash session for a running container: `docker exec -it CONTAINERNAME bash`
+* List: `docker ps`
+* Remove: `docker rm ID`
+* Remove all stopped containers: `docker ps -aq --no-trunc -f status=exited | xargs docker rm`
+* Enter a bash session from an image: `docker run -it IMAGEID bash`
+* Enter a bash session for a running container: `docker exec -it CONTAINERNAME bash`
