@@ -1,7 +1,13 @@
 const assert = require('assert');
 const sinon = require('sinon');
 
-require('./exercises.js');
+const {
+  unique,
+  flatten,
+  fizzBuzz,
+  fibonacci,
+  mergeSort,
+} = require('./exercises.js');
 
 describe('Array', () => {
   describe('#myEach()', () => {
@@ -35,5 +41,117 @@ describe('Array', () => {
 
       assert.equal(result, 10);
     });
+  });
+});
+
+describe('unique()', () => {
+  it('should return an empty array if given an empty array', () => {
+    const array = [];
+    const result = unique(array);
+
+    assert.deepEqual(result, []);
+  });
+
+  it('should reduce duplicates', () => {
+    const array = [1, 2, 2, 3, 4, 3, 5];
+    const result = unique(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4, 5]);
+  });
+});
+
+describe('flatten()', () => {
+  it('should return the same array if it is one-dimensional', () => {
+    const array = [1, 2, 3, 4];
+    const result = flatten(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4]);
+  });
+
+  it('should flatten a two-dimensional array', () => {
+    const array = [1, [2, 3, 4]];
+    const result = flatten(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4]);
+  });
+
+  it('should flatten a multi-dimensional array', () => {
+    const array = [1, [[2], [3, 4, []]]];
+    const result = flatten(array);
+
+    assert.deepEqual(result, [1, 2, 3, 4]);
+  });
+});
+
+describe('fizzBuzz()', () => {
+  it('should return an array with fizz-buzzified numbers', () => {
+    const result = fizzBuzz(20);
+
+    assert.deepEqual(
+      result,
+      [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13,
+       14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz']
+    );
+  });
+});
+
+describe('fibonacci()', () => {
+  it('should return an empty array when n is 0', () => {
+    const result = fibonacci(0);
+
+    assert.deepEqual(result, []);
+  });
+
+  it('should return the correct result for n < 3', () => {
+    const result = fibonacci(1);
+    const result2 = fibonacci(2);
+
+    assert.deepEqual(result, [1]);
+    assert.deepEqual(result2, [1, 1]);
+  });
+
+  it('should return the correct result for larger values of n', () => {
+    const result = fibonacci(10);
+
+    assert.deepEqual(result, [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
+  });
+});
+
+describe('mergeSort()', () => {
+  it('should sort an empty array', () => {
+    const result = mergeSort([]);
+
+    assert.deepEqual(result, []);
+  });
+
+  it('should sort an already sorted array', () => {
+    const result = mergeSort([1, 2, 3, 4, 5]);
+
+    assert.deepEqual(result, [1, 2, 3, 4, 5]);
+  });
+
+  it('should sort a reversed array', () => {
+    const result = mergeSort([5, 4, 3, 2, 1]);
+
+    assert.deepEqual(result, [1, 2, 3, 4, 5]);
+  });
+
+  it('should sort a shuffled array', () => {
+    // Fisher–Yates shuffle
+    const shuffle = array => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+
+      return array;
+    };
+
+    for (let i = 0; i < 10; i++) {
+      const result = mergeSort(shuffle([1, 2, 3, 4, 5]));
+
+      assert.deepEqual(result, [1, 2, 3, 4, 5]);
+    }
+
   });
 });
