@@ -1,5 +1,9 @@
 # Docker
 
+## General
+
+* Remove unused data: `docker system prune`
+
 ## Docker Hub
 
 * Log In: `docker login`
