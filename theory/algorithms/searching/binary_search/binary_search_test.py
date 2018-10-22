@@ -9,6 +9,12 @@ class TestBinarySearch(unittest.TestCase):
         self.maxDiff = None
 
     def test_it_searches_small_arrays(self):
+        items = [1]
+        self.assertEqual(binary_search(items, 1), 0)
+
+        items = [1, 2]
+        self.assertEqual(binary_search(items, 2), 1)
+
         items = [1, 2, 3]
         self.assertEqual(binary_search(items, 1), 0)
 
@@ -20,7 +26,11 @@ class TestBinarySearch(unittest.TestCase):
 
     def test_it_searches_large_arrays(self):
         items = create_consecutive_list(1000)
-        self.assertEqual(binary_search(items, 978), 977)
+        self.assertEqual(binary_search(items, 978), 978)
+
+    def test_it_handles_missing_item(self):
+        items = [1, 2, 4]
+        self.assertEqual(binary_search(items, 3), None)
 
 
 if __name__ == '__main__':
