@@ -6,6 +6,7 @@
 * [Programming Languages](./languages)
   * [Io](./languages/io)
   * [JavaScript](./languages/javascript)
+  * [Python](./languages/python)
   * [Ruby](./languages/ruby)
 * [Theory](./theory)
   * [Algorithms](./theory/algorithms)
