@@ -25,4 +25,4 @@ Python is often compared to Ruby, because they are human readable, high level, o
 * **Programming Paradigm**: Object-oriented - Functional - Reflective
 * **Typing Discipline**: Dynamic - Strong - Duck
 
-See [Pythonic Conventions](./pythonic-conventions.py)
+See [Pythonic Conventions](./pythonic-conventions.md)
