@@ -12,3 +12,6 @@
   * [Algorithms](./theory/algorithms)
     * [Searching](./theory/algorithms/searching)
     * [Sorting](./theory/algorithms/sorting)
+  * [Data Structures](./theory/data_structures)
+    * [Array](./theory/data_structures/array)
+    * [Linked List](./theory/data_structures/linked_list)
