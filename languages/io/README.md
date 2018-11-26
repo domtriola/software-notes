@@ -14,9 +14,9 @@
 
 ## Overview
 
-Io is a prototypal language in which every action is a messages. Just about everything is an object, and everything happens by sending messages to objects.
+Io is a prototypal language in which every action is a message. Just about everything is an object, and everything happens by sending messages to objects.
 
-My first impression of Io wasn't great. The documentation is sparse, and it's quite difficult to look up information online, partly because the name "Io" is not the easiest to find relevant results for in a search engine, and partly because there's just not that much information out there. This can make it a frustrating language to work with. However, Io is syntactically quite simple, and it does have a lot of helpful introspection tools that help mitigate against the lack of thorough documentation.
+My first impression of Io wasn't great. The documentation is sparse, and it's quite difficult to find information online, partly because the name "Io" is not the easiest to find relevant results for in a search engine, and partly because there's just not that much information out there. This can make it a frustrating language to work with. However, Io is syntactically quite simple, and it does have a lot of helpful introspection tools that help mitigate against the lack of thorough documentation.
 
 ## Getting Started
 
