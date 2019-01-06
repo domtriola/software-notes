@@ -42,6 +42,10 @@ print(string.encode('utf-8'))
 
 `[start:end:stride]`
 
+* Start: the index to start taking from
+* End: the index where taking stops (exclusive)
+* Stride: the size of the step taken for each successive take
+
 ```python
 items = ['a', 'b', 'c', 'd', 'e']
 
