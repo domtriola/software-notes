@@ -6,6 +6,7 @@ Notes from [Effective Python](https://effectivepython.com/)
 * [Bytes and Strings](#bytes-and-strings)
 * [Slicing](#slicing)
 * [Comprehensions](#comprehensions)
+* [Generators](#generators)
 
 ## Python Zen
 
@@ -106,4 +107,27 @@ doubled_evens = [num * 2 for num in nums if num % 2 == 0]
 matrix = [[1, 2], [3, 4], [5, 6]]
 flattened = [el for row in matrix for el in row]
 # => [1, 2, 3, 4, 5, 6]
+```
+
+## Generators
+
+Generators can be used for large data sets instead of comprehensions when memory is a concern (like for large files or potentially never-ending streams). Generators let us process data in chunks, rather than in one large list.
+
+```python
+really_large_file = "I'm a really large file...".split(' ')
+
+# Comprehension creates one large list to store the entire file:
+lines = [line for line in really_large_file]
+lines
+# => ["I'm", 'a', 'really', 'large', 'file...']
+
+# A generator allows us to read the lines one at a time (or in however large of batches we decide is appropriate):
+line_iterator = (line for line in really_large_file)
+next(line_iterator)
+# => "I'm"
+next(line_iterator)
+# => "a"
+next(line_iterator)
+# => "really"
+# etc...
 ```
