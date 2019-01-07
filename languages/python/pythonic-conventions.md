@@ -10,6 +10,7 @@ Notes from [Effective Python](https://effectivepython.com/)
 * [Enumerate](#enumerate)
 * [Zip](#zip)
 * [Closures](#closures)
+* [Defensive Iteration](#defensive-iteration)
 
 ## Python Zen
 
@@ -234,4 +235,44 @@ sort_with_priority(numbers, priority_group)
 # => True
 numbers
 # => [5, 7, 9, 1, 2, 3, 4, 6, 8]
+```
+
+## Defensive Iteration
+
+An iterator is exhausted the first time it is called and cannot be called again. For this reason, if a method needs to iterate over an iterator multiple times we should ensure that a new iterator is generated each time.
+
+```python
+def normalize(numbers):
+    # An iterator will return the same instance
+    if iter(numbers) is iter(numbers):
+        raise TypeError('Must supply a container for the iterator')
+    total = sum(numbers) # First iteration
+    return [100 * num / total for num in numbers] # Second iteration
+
+# Generator
+def read_numbers(numbers):
+    for num in numbers:
+        yield num
+
+numbers = [2, 4, 6]
+nums_it = read_numbers(numbers)
+
+normalize(nums_it)
+# => [] (without the TypeError check enforced)
+
+# We can create a container using the __iter__ method
+class ReadNums(object):
+    def __init__(self, numbers):
+        self.numbers = numbers
+    def __iter__(self):
+        for num in self.numbers:
+            yield num
+
+nums_container = ReadNums(numbers)
+normalize(nums_container)
+# => [16.666666666666668, 33.333333333333336, 50.0]
+
+# Passing in a list directly also still works
+normalize(numbers)
+# => [16.666666666666668, 33.333333333333336, 50.0]
 ```
