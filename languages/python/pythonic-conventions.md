@@ -20,8 +20,7 @@ import this
 
 ## Bytes and Strings
 
-In Python 3 it is important to know what is bytes and what is a string, because
-they are not equal (like they sometimes are in Python 2).
+In Python 3 it is important to know what is bytes and what is a string, because they are not equal (like they sometimes are in Python 2).
 
 ```python
 b'' == '' # Python 2
