@@ -15,3 +15,6 @@
   * [Data Structures](./theory/data_structures)
     * [Array](./theory/data_structures/array)
     * [Linked List](./theory/data_structures/linked_list)
+    * [Graph](./theory/data_structures/graph)
+      * [Tree](./theory/data_structures/graph/tree)
+        * [Binary Tree](./theory/data_structures/graph/tree/binary_tree)
