@@ -18,3 +18,4 @@
     * [Graph](./theory/data_structures/graph)
       * [Tree](./theory/data_structures/graph/tree)
         * [Binary Tree](./theory/data_structures/graph/tree/binary_tree)
+        * [Heap](./theory/data_structures/graph/tree/heap)
