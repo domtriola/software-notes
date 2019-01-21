@@ -11,12 +11,23 @@ def merge_sort(items):
 def merge(left, right):
     merged = []
 
-    while left and right:
-        if left[0] < right[0]:
-            merged.append(left.pop(0))
+    left_i = 0
+    right_i = 0
+    while left_i < len(left) and right_i < len(right):
+        left_val = left[left_i]
+        right_val = right[right_i]
+        if left_val < right_val:
+            merged.append(left_val)
+            left_i += 1
         else:
-            merged.append(right.pop(0))
+            merged.append(right_val)
+            right_i += 1
 
-    return merged + left + right
+    for array, i in [(left, left_i), (right, right_i)]:
+        while i < len(array):
+            merged.append(array[i])
+            i += 1
+
+    return merged
 
 merge_sort([4, 3, 2, 1])
