@@ -12,9 +12,9 @@ def depth_first_search(root, target):
         return root
 
     for node in [root.left, root.right]:
-        found_node = depth_first_search(node, target)
+        found = depth_first_search(node, target)
 
-        if found_node and found_node.value == target:
-            return found_node
+        if found:
+            return found
 
     return None
