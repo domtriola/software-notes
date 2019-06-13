@@ -4,7 +4,8 @@
   "description": "A GraphQL example app",
   "main": "index.js",
   "scripts": {
-    "start": "node services/cats.js & node services/dogs.js &",
+    "start": "nodemon index.js",
+    "start-services": "node services/cats.js & node services/dogs.js &",
     "halt": "ps aux | grep 'node services/' | awk '{print $2}' | xargs kill",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +14,10 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-graphql": "^0.8.0",
-    "graphql": "^14.2.1"
+    "graphql": "^14.2.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
