@@ -1,0 +1,23 @@
+{
+  "name": "graphql-example",
+  "version": "1.0.0",
+  "description": "A GraphQL example app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start-services": "node services/cats.js & node services/dogs.js &",
+    "halt-services": "ps aux | grep 'node services/' | awk '{print $2}' | xargs kill",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dominick Triola <dominicktriola@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.2.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
