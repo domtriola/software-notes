@@ -2,7 +2,7 @@
 
 ## What
 
-GraphQL is a query language that allows you to assemble API queries using a defined type system.
+GraphQL is a query language that allows you to assemble API queries and services using a defined type system.
 
 ## Why
 
