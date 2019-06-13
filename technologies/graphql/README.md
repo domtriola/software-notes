@@ -26,8 +26,9 @@ To start up app:
 
 ```bash
 npm install
+npm run start-services
 npm start
 
-# To kill processes when done:
-npm run halt
+# To kill background processes when done:
+npm run halt-services
 ```

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "start-services": "node services/cats.js & node services/dogs.js &",
-    "halt": "ps aux | grep 'node services/' | awk '{print $2}' | xargs kill",
+    "halt-services": "ps aux | grep 'node services/' | awk '{print $2}' | xargs kill",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dominick Triola <dominicktriola@gmail.com>",
