@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
-const { Cat, CatType } = require('../models/cat');
-const { Dog, DogType } = require('../models/dog');
+const { Cat, CatType } = require('./cat');
+const { Dog, DogType } = require('./dog');
 
 // TODO: query age for data transformation
 
@@ -10,29 +10,21 @@ const RootQueryType = new GraphQLObjectType({
   fields: () => ({
     cats: {
       type: new GraphQLList(CatType),
-      resolve: () => {
-        return Cat.getAll();
-      }
+      resolve: () => Cat.getAll(),
     },
     cat: {
       type: CatType,
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
-      resolve: (prevObject, { id }) => {
-        return Cat.get({ id });
-      }
+      resolve: (_prevObject, { id }) => Cat.get({ id }),
     },
     dogs: {
       type: new GraphQLList(DogType),
-      resolve: () => {
-        return Dog.getAll();
-      }
+      resolve: () => Dog.getAll(),
     },
     dog: {
       type: DogType,
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
-      resolve: (prevObject, { id }) => {
-        return Dog.get({ id });
-      }
+      resolve: (_prevObject, { id }) => Dog.get({ id }),
     },
   }),
 });
