@@ -1,7 +1,9 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
-const { Cat, CatType } = require('./cat');
-const { Dog, DogType } = require('./dog');
+const CatType = require('./cat');
+const DogType = require('./dog');
+const Cat = require('../resolvers/cat');
+const Dog = require('../resolvers/dog');
 
 // TODO: query age for data transformation
 
