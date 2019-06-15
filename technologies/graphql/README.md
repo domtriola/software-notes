@@ -28,7 +28,4 @@ To start up app:
 npm install
 npm run start-services
 npm start
-
-# To kill background processes when done:
-npm run halt-services
 ```
