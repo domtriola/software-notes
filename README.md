@@ -1,8 +1,7 @@
 # Software Notes
 
-* [DevOps](./devops)
-  * [Amazon Web Services](./devops/aws)
-  * [Docker](./devops/docker)
+* [Services](./services)
+  * [Amazon Web Services](./services/aws)
 * [Programming Languages](./languages)
   * [C++](./languages/c++)
   * [Io](./languages/io)
@@ -10,6 +9,7 @@
   * [Python](./languages/python)
   * [Ruby](./languages/ruby)
 * [Technologies](./technologies)
+  * [Docker](./technologies/docker)
   * [GraphQL](./technologies/graphql)
 * [Theory](./theory)
   * [Algorithms](./theory/algorithms)
