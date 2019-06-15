@@ -6,14 +6,16 @@ const port = 3000;
 const cats = {
   1: {
     id: 1,
-    name: 'Fluffy',
+    name: 'Garfield',
     birthDate: 1336364059966,
+    ownerId: 1,
   },
   2: {
     id: 2,
-    name: 'Garfield',
+    name: 'Mr. Bigglesworth',
     birthDate: 267087600000,
-  }
+    ownerId: 2,
+  },
 };
 
 app.get('/cats', (req, res) => res.json(cats));
