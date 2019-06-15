@@ -13,6 +13,7 @@
   * [GraphQL](./technologies/graphql)
 * [Theory](./theory)
   * [Algorithms](./theory/algorithms)
+    * [Greedy](./theory/algorithms/greedy)
     * [Searching](./theory/algorithms/searching)
     * [Sorting](./theory/algorithms/sorting)
   * [Data Structures](./theory/data_structures)
