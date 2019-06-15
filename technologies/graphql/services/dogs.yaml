@@ -1,0 +1,9 @@
+dogs:
+  1:
+    id: 1
+    name: 'Clifford'
+    birthDate: -241557313515
+  2:
+    id: 2
+    name: 'Spot'
+    birthDate: 1525668498349

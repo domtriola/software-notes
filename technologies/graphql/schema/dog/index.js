@@ -1,7 +1,9 @@
 const fetch = require('node-fetch');
+const fs = require('fs');
 const graphql = require('graphql');
+const path = require('path');
+const yaml = require('js-yaml');
 const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
-const { DOG_SERVICE_ENDPOINT } = require('../../config');
 
 // Schema
 const DogType = new GraphQLObjectType({
@@ -14,18 +16,17 @@ const DogType = new GraphQLObjectType({
 });
 
 // Resolver model
+const DATA_PATH = path.join(__dirname, '..', '..', 'services', 'dogs.yaml');
+const DOC = yaml.safeLoad(fs.readFileSync(DATA_PATH, 'utf8'));
+
 const Dog = {
   get: async ({ id }) => {
-    const url = `${DOG_SERVICE_ENDPOINT}/dogs/${id}`;
-    const response = await fetch(url);
-    const dog = await response.json();
-    return dog;
+    const { dogs } = DOC;
+    return dogs[id];
   },
 
   getAll: async () => {
-    const url = `${DOG_SERVICE_ENDPOINT}/dogs`;
-    const response = await fetch(url);
-    const dogs = await response.json();
+    const { dogs } = DOC;
     return Object.keys(dogs).map(id => dogs[id]);
   }
 };
