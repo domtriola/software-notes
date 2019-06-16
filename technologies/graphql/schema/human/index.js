@@ -1,13 +1,12 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
 
-const DogType = new GraphQLObjectType({
-  name: 'DogType',
+const Human = new GraphQLObjectType({
+  name: 'HumanType',
   fields: {
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    birthDate: { type: GraphQLString },
-  }
+  },
 });
 
-module.exports = DogType;
+module.exports = Human;

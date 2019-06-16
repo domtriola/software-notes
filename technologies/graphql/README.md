@@ -29,6 +29,23 @@ npm install
 npm run start-services
 npm start
 
-# To kill background processes when done:
+# Shut down services when done
 npm run halt-services
+```
+
+Example Query:
+```
+{
+  cats {
+    id
+    name
+    owner {
+      name
+    }
+  }
+
+  dog (id: 1) {
+    name
+  }
+}
 ```

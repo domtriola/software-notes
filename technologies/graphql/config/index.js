@@ -7,7 +7,7 @@ const CatService = {
   PORT: 3000,
 };
 
-const DogService = {
+const HumanService = {
   PROTOCOL: DEFAULT_PROTOCOL,
   HOST: DEFAULT_HOST,
   PORT: 3001,
@@ -19,5 +19,5 @@ const endpointFromServiceConfig = (service) => {
 
 module.exports = {
   CAT_SERVICE_ENDPOINT: endpointFromServiceConfig(CatService),
-  DOG_SERVICE_ENDPOINT: endpointFromServiceConfig(DogService),
+  HUMAN_SERVICE_ENDPOINT: endpointFromServiceConfig(HumanService),
 };
