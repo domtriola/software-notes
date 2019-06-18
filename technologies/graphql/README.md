@@ -33,19 +33,4 @@ npm start
 npm run halt-services
 ```
 
-Example Query:
-```
-{
-  cats {
-    id
-    name
-    owner {
-      name
-    }
-  }
-
-  dog (id: 1) {
-    name
-  }
-}
-```
+[Query examples](./queries.md)
