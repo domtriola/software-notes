@@ -7,13 +7,13 @@ const cats = {
   1: {
     id: 1,
     name: 'Garfield',
-    birthDate: 1336364059966,
+    birthDate: 267087600000,
     ownerId: 1,
   },
   2: {
     id: 2,
     name: 'Mr. Bigglesworth',
-    birthDate: 267087600000,
+    birthDate: 862086990500,
     ownerId: 2,
   },
 };

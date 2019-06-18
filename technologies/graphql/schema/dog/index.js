@@ -1,4 +1,5 @@
 const graphql = require('graphql');
+const timeStampToAge = require('../../utils/timeStampToAge');
 const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
 
 const DogType = new GraphQLObjectType({
@@ -7,6 +8,10 @@ const DogType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     birthDate: { type: GraphQLString },
+    age: {
+      type: GraphQLString,
+      resolve: (prevObject) => timeStampToAge(prevObject.birthDate),
+    },
   }
 });
 

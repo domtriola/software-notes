@@ -7,8 +7,6 @@ const Cat = require('../resolvers/cat');
 const Dog = require('../resolvers/dog');
 const Human = require('../resolvers/human');
 
-// TODO: query age for data transformation
-
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: () => ({
