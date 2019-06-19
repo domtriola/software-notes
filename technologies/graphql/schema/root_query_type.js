@@ -1,16 +1,15 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
 const CatType = require('./cat');
-const DogType = require('./dog');
+const { DogType } = require('./dog');
 const HumanType = require('./human');
 const Cat = require('../resolvers/cat');
 const Dog = require('../resolvers/dog');
 const Human = require('../resolvers/human');
 
-// TODO: query age for data transformation
-
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
+  description: 'The root of all queries',
   fields: () => ({
     cats: {
       type: new GraphQLList(CatType),
