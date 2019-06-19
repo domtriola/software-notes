@@ -1,6 +1,7 @@
 # Queries
 
-Example query:
+## Basic Example
+
 ```
 {
   cats {
@@ -10,21 +11,31 @@ Example query:
       name
     }
   }
+}
+```
 
+## Arguments
+
+```
+{
   dog (id: 1) {
     name
   }
 }
 ```
 
-Alias
+## Alias
+
 ```
-evilCat: cat(id: 2) {
-  name
+{
+  evilCat: cat(id: 2) {
+    name
+  }
 }
 ```
 
-Fragment
+## Fragment
+
 ```
 {
   evilCat: cat(id:2) {
@@ -38,5 +49,20 @@ Fragment
 fragment petFields on CatType {
   name
   age
+}
+```
+
+## Mutation
+
+```
+mutation DogMutation {
+  addDog(
+    dog: {
+      name: "puppy"
+    }
+  ) {
+    id
+    name
+  }
 }
 ```
