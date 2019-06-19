@@ -6,6 +6,6 @@ const RootMutationType = require('./root_mutation_type');
 
 module.exports = new GraphQLSchema({
   query: RootQueryType,
-  mutation: RootMutationType,
+  // mutation: RootMutationType,
   // TODO: subscription: Subscription,
 });

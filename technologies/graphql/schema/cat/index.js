@@ -9,17 +9,17 @@ const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
 const CatType = new GraphQLObjectType({
   name: 'CatType',
   fields: {
-    id: { type: GraphQLID },
-    name: { type: GraphQLString },
-    birthDate: { type: GraphQLString },
-    owner: {
-      type: HumanType,
-      resolve: (prevObject) => Human.get({ id: prevObject.ownerId }),
-    },
-    age: {
-      type: GraphQLString,
-      resolve: (prevObject) => timeStampToAge(prevObject.birthDate),
-    },
+    // id: { type: GraphQLID },
+    // name: { type: GraphQLString },
+    // birthDate: { type: GraphQLString },
+    // owner: {
+    //   type: HumanType,
+    //   resolve: (prevObject) => Human.get({ id: prevObject.ownerId }),
+    // },
+    // age: {
+    //   type: GraphQLString,
+    //   resolve: (prevObject) => timeStampToAge(prevObject.birthDate),
+    // },
   },
 });
 
