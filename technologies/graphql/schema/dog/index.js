@@ -1,6 +1,12 @@
 const graphql = require('graphql');
 const timeStampToAge = require('../../utils/timeStampToAge');
-const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
+const {
+  GraphQLObjectType,
+  GraphQLInputObjectType,
+  GraphQLNonNull,
+  GraphQLID,
+  GraphQLString
+} = graphql;
 
 const DogType = new GraphQLObjectType({
   name: 'DogType',
@@ -15,4 +21,15 @@ const DogType = new GraphQLObjectType({
   }
 });
 
-module.exports = DogType;
+const DogInputType = new GraphQLInputObjectType({
+  name: 'DogInputType',
+  fields: {
+    name: { type: new GraphQLNonNull(GraphQLString) },
+    birthDate: { type: GraphQLString },
+  },
+});
+
+module.exports = {
+  DogType,
+  DogInputType,
+};
