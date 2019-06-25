@@ -19,6 +19,7 @@ TODO
   * or `go install` creates executables in `bin/`
 * Clean up: `go clean -i`
 * Run a single file: `go run path/filename.go`
+* [Package Management](https://github.com/Masterminds/glide)
 
 ## Key Features
 

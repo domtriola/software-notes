@@ -1,0 +1,52 @@
+hash: 6fa3373d323acd57d27542e8e4bbcbdab979c813ee5e44e4a1c7dcee3edac9b6
+updated: 2019-06-24T22:56:48.462993-07:00
+imports:
+- name: 9fans.net/go
+  version: 607f0e874ba2877b068b4dd302d30369528938bd
+  subpackages:
+  - acme
+- name: github.com/cosiner/argv
+  version: edfd3b0cb5148fc3056ec72a88866dc89d34f8cd
+- name: github.com/keegancsmith/rpc
+  version: d0beebb75ae7d7f865736fa3bd12293d6eae778d
+- name: github.com/mattn/go-colorable
+  version: 8029fb3788e5a4a9c00e415f586a6d033f5d38b3
+- name: github.com/mattn/go-isatty
+  version: 1311e847b0cb909da63b5fecfb5370aa66236465
+- name: github.com/peterh/liner
+  version: 5a0dfa99e2aa1d433a9642e863da51402e609376
+- name: github.com/sirupsen/logrus
+  version: 839c75faf7f98a33d445d181f3018b5c3409a45e
+- name: github.com/spf13/cobra
+  version: f2b07da1e2c38d5f12845a4f607e2e1018cbb1f5
+  subpackages:
+  - doc
+- name: golang.org/x/arch
+  version: 788fe5ffcd8c07da9e57a7f3b134c13864be60be
+  subpackages:
+  - x86/x86asm
+- name: golang.org/x/net
+  version: 3b0461eec859c4b73bb64fdc8285971fd33e3938
+  subpackages:
+  - context/ctxhttp
+  - html
+  - html/atom
+  - websocket
+- name: golang.org/x/sync
+  version: 112230192c580c3556b8cee6403af37a4fc5f28c
+  subpackages:
+  - errgroup
+- name: golang.org/x/sys
+  version: c5567b49c5d04a5f83870795b8c0e2df43a8ce32
+  subpackages:
+  - unix
+  - windows
+- name: gopkg.in/yaml.v2
+  version: 51d6538a90f86fe93ac480b35f37b2be17fef232
+- name: gopl.io
+  version: b725d6015f980e94734da37e35ba0d943fc7532f
+  subpackages:
+  - ch1/helloworld
+testImports:
+- name: github.com/pkg/profile
+  version: f6fe06335df110bcf1ed6d4e852b760bfc15beee
