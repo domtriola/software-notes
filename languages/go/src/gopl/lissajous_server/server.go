@@ -1,5 +1,8 @@
 // Exercise from http://www.gopl.io/
 
+// Example URL:
+// http://localhost:8000/?cycles=3&res=0.0005&size=300&delay=8&nframes=64
+
 package main
 
 import (
