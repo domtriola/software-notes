@@ -4,6 +4,7 @@
   * [Amazon Web Services](./services/aws)
 * [Programming Languages](./languages)
   * [C++](./languages/c++)
+  * [Go](./languages/go)
   * [Io](./languages/io)
   * [JavaScript](./languages/javascript)
   * [Python](./languages/python)
