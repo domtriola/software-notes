@@ -39,4 +39,18 @@ There are a few cases for which pointers can be used in Go:
 * Update a field from a member function (method)
 * Optimizing code by eliminating variable copies in function calls
 
-See [pointers.go](./pointers/pointers.go) for examples
+See [pointers.go](./pointers/pointers.go) for examples.
+
+You can use the `new` function to create a new variable but return only a pointer to it.
+
+For example:
+```go
+func newInt() *int {
+  var num int
+  return &num
+}
+
+ptr := newInt()
+// works the same as:
+otherPtr := new(int)
+```
