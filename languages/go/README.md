@@ -1,4 +1,4 @@
-# Python
+# Go
 
 * [Overview](#overview)
 * [Getting Started](#getting-started)
