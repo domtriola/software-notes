@@ -16,6 +16,7 @@
   * [Go](./languages/go)
   * [Io](./languages/io)
   * [JavaScript](./languages/javascript)
+    * [TypeScript](./languages/javascript/typescript)
   * [Python](./languages/python)
   * [Ruby](./languages/ruby)
 * [Technologies](./technologies)
