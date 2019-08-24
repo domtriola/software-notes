@@ -1,3 +1,7 @@
+# NOTE:
+# Take care to not expose sensitive data when using a backend for state:
+# https://github.com/hashicorp/terraform/issues/516
+
 provider "aws" {
   region = "${var.aws_region}"
 }
