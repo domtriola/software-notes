@@ -2,7 +2,6 @@
   "name": "project-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo \"Error: no start command specified\" && exit 1",
@@ -34,6 +33,7 @@
     "node-sass": "^4.9.4",
     "stylelint": "^9.7.1",
     "stylelint-config-standard": "^18.2.0",
-    "webpack": "^4.24.0"
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.3.7"
   }
 }
