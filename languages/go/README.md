@@ -20,6 +20,7 @@ Go is a statically typed imperative language with a C-like syntax. It is attempt
 * Clean up: `go clean -i`
 * Run a single file: `go run path/filename.go`
 * [Package Management](https://github.com/Masterminds/glide)
+* Find docs for any package or module: `go doc <package>.<Module>`
 
 ## Key Features
 
@@ -29,3 +30,27 @@ Go is a statically typed imperative language with a C-like syntax. It is attempt
 ### Concurrency
 
 ### Channels
+
+### Pointers
+
+There are a few cases for which pointers can be used in Go:
+
+* Update a variable from another function
+* Update a field from a member function (method)
+* Optimizing code by eliminating variable copies in function calls
+
+See [pointers.go](./pointers/pointers.go) for examples.
+
+You can use the `new` function to create a new variable but return only a pointer to it.
+
+For example:
+```go
+func newInt() *int {
+  var num int
+  return &num
+}
+
+ptr := newInt()
+// works the same as:
+otherPtr := new(int)
+```
