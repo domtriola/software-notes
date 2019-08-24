@@ -1,13 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: './app/client/index',
+  entry: path.resolve(__dirname, './app/client/index.js'),
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist/js'),
     filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.js?$/],
         exclude: /(node_modules)/,

@@ -2,7 +2,6 @@
   "name": "project-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo \"Error: no start command specified\" && exit 1",
@@ -15,10 +14,6 @@
   },
   "author": "Dominick Triola",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
@@ -32,8 +27,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-util": "^3.0.8",
     "node-sass": "^4.9.4",
-    "stylelint": "^9.7.1",
+    "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.2.0",
-    "webpack": "^4.24.0"
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.3.7"
   }
 }
