@@ -22,5 +22,6 @@
 * [Technologies](./technologies)
   * [Docker](./technologies/docker)
   * [GraphQL](./technologies/graphql)
+  * [Terraform](./technologies/terraform)
 * [Services](./services)
   * [Amazon Web Services](./services/aws)
