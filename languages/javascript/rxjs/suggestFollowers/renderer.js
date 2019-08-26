@@ -24,11 +24,19 @@ export const createUserList = (parent) => {
   return userList;
 };
 
-export const createUserSuggestion = (parent, { login }) => {
-  const userSuggestion = el('div', { innerHTML: login });
+export const createUserSuggestion = (parent, { login }, index) => {
+  const userSuggestion = el('div', { id: `suggestion-${index}`, innerHTML: login });
   parent.appendChild(userSuggestion);
   return userSuggestion;
 }
+
+export const updateUserSuggestion = (index, innerHTML) => {
+  const userSuggestion = document.getElementById(`suggestion-${index}`);
+  if (userSuggestion) {
+    userSuggestion.innerHTML = innerHTML;
+  }
+  return userSuggestion;
+};
 
 export const createRefreshButton = (parent) => {
   const refreshButton = el('button', { innerHTML: 'Refresh' });

@@ -1,6 +1,6 @@
 import { of, from, fromEvent, merge } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
-import { createUserList, createUserSuggestion, createRefreshButton } from './renderer';
+import { createUserList, createUserSuggestion, createRefreshButton, updateUserSuggestion } from './renderer';
 
 const GITHUB_USERS_API = 'https://api.github.com/users';
 
@@ -30,9 +30,12 @@ const usersApiResponseStream = usersApiRequestStream.pipe(
 // Subscribe to response stream to do something with the outputs
 usersApiResponseStream.subscribe(function (response) {
   response.json().then((users) => {
-    userList.innerHTML = '';
-    users.slice(0, 3).map(user => {
-      createUserSuggestion(userList, user)
+    users.slice(0, 3).map((user, index) => {
+      const updatedSuggestion = updateUserSuggestion(index, user.login);
+      console.log(updatedSuggestion);
+      if (!updatedSuggestion) {
+        createUserSuggestion(userList, user, index);
+      }
     });
   });
 });
