@@ -31,6 +31,10 @@ const usersApiResponseStream = usersApiRequestStream.pipe(
 // Create streams for the close buttons
 const close1 = document.getElementById('close-suggestion-0');
 const close1ClickStream = fromEvent(close1, 'click');
+const close2 = document.getElementById('close-suggestion-1');
+const close2ClickStream = fromEvent(close2, 'click');
+const close3 = document.getElementById('close-suggestion-2');
+const close3ClickStream = fromEvent(close3, 'click');
 
 // TODO: Refactor to DRY up
 // Create a stream for each suggestion
@@ -40,14 +44,17 @@ const suggestion1Stream = close1ClickStream.pipe(
     return { user: users[Math.floor(Math.random() * users.length)], index: 0 };
   })
 );
-// const suggestion1Stream = usersApiResponseStream.pipe(
-//   map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 0 }))
-// );
-const suggestion2Stream = usersApiResponseStream.pipe(
-  map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 1 }))
+const suggestion2Stream = close2ClickStream.pipe(
+  startWith('init click'),
+  combineLatest(usersApiResponseStream, (_click, users) => {
+    return { user: users[Math.floor(Math.random() * users.length)], index: 1 };
+  })
 );
-const suggestion3Stream = usersApiResponseStream.pipe(
-  map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 2 }))
+const suggestion3Stream = close3ClickStream.pipe(
+  startWith('init click'),
+  combineLatest(usersApiResponseStream, (_click, users) => {
+    return { user: users[Math.floor(Math.random() * users.length)], index: 2 };
+  })
 );
 
 // Subscribe to response stream to do something with the outputs
