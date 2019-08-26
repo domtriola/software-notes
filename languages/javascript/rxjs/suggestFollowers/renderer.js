@@ -2,7 +2,7 @@ export const el = (
   tagName,
   {
     id=null,
-    classNames=null,
+    className=null,
     innerHTML=null
   }={}
 ) => {
@@ -12,7 +12,10 @@ export const el = (
     element.id = id;
   }
 
-  element.class = classNames;
+  if (className) {
+    element.className = className;
+  }
+
   element.innerHTML = innerHTML;
 
   return element;
@@ -25,15 +28,31 @@ export const createUserList = (parent) => {
 };
 
 export const createUserSuggestion = (parent, { login }, index) => {
-  const userSuggestion = el('div', { id: `suggestion-${index}`, innerHTML: login });
+  const userSuggestion = el('div', { id: `suggestion-${index}` });
+
+  userSuggestion.append(
+    el('p', {
+      innerHTML: login,
+      className: 'user-suggestion',
+    })
+  );
+  userSuggestion.append(
+    el('a', {
+      id: `close-suggestion-${index}`,
+      className: 'close-suggestion',
+      innerHTML: 'x',
+    })
+  )
+
   parent.appendChild(userSuggestion);
   return userSuggestion;
-}
+};
 
 export const updateUserSuggestion = (index, innerHTML) => {
   const userSuggestion = document.getElementById(`suggestion-${index}`);
   if (userSuggestion) {
-    userSuggestion.innerHTML = innerHTML;
+    const user = userSuggestion.getElementsByClassName('user-suggestion');
+    user[0].innerHTML = innerHTML;
   }
   return userSuggestion;
 };
@@ -42,4 +61,4 @@ export const createRefreshButton = (parent) => {
   const refreshButton = el('button', { innerHTML: 'Refresh' });
   parent.appendChild(refreshButton);
   return refreshButton;
-}
+};

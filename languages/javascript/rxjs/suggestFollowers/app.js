@@ -22,7 +22,7 @@ const refreshRequestStream = refreshClickStream.pipe(
 // Combine requests into one stream
 const usersApiRequestStream = merge(startupRequestStream, refreshRequestStream);
 
-// Create response stream which actually sends the requests
+// Create response stream which actually sends the requests and returns result
 const usersApiResponseStream = usersApiRequestStream.pipe(
   mergeMap(requestUrl => from(fetch(requestUrl))),
   mergeMap(response => from(response.json())),
