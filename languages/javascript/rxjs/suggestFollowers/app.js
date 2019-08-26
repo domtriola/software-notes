@@ -24,18 +24,37 @@ const usersApiRequestStream = merge(startupRequestStream, refreshRequestStream);
 
 // Create response stream which actually sends the requests
 const usersApiResponseStream = usersApiRequestStream.pipe(
-  mergeMap(requestUrl => from(fetch(requestUrl)))
+  mergeMap(requestUrl => from(fetch(requestUrl))),
+  mergeMap(response => from(response.json())),
+);
+
+// Create a stream for each suggestion
+const suggestion1Stream = usersApiResponseStream.pipe(
+  map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 0 }))
+);
+const suggestion2Stream = usersApiResponseStream.pipe(
+  map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 1 }))
+);
+const suggestion3Stream = usersApiResponseStream.pipe(
+  map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 2 }))
 );
 
 // Subscribe to response stream to do something with the outputs
-usersApiResponseStream.subscribe(function (response) {
-  response.json().then((users) => {
-    users.slice(0, 3).map((user, index) => {
-      const updatedSuggestion = updateUserSuggestion(index, user.login);
-      console.log(updatedSuggestion);
-      if (!updatedSuggestion) {
-        createUserSuggestion(userList, user, index);
-      }
-    });
-  });
+suggestion1Stream.subscribe(({ user, index }) => {
+  const updatedSuggestion = updateUserSuggestion(index, user.login);
+  if (!updatedSuggestion) {
+    createUserSuggestion(userList, user, index);
+  }
+});
+suggestion2Stream.subscribe(({ user, index }) => {
+  const updatedSuggestion = updateUserSuggestion(index, user.login);
+  if (!updatedSuggestion) {
+    createUserSuggestion(userList, user, index);
+  }
+});
+suggestion3Stream.subscribe(({ user, index }) => {
+  const updatedSuggestion = updateUserSuggestion(index, user.login);
+  if (!updatedSuggestion) {
+    createUserSuggestion(userList, user, index);
+  }
 });
