@@ -1,5 +1,5 @@
 import { of, from, fromEvent, merge } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, combineLatest, startWith } from 'rxjs/operators';
 import { createUserList, createUserSuggestion, createRefreshButton, updateUserSuggestion } from './renderer';
 
 const GITHUB_USERS_API = 'https://api.github.com/users';
@@ -28,10 +28,21 @@ const usersApiResponseStream = usersApiRequestStream.pipe(
   mergeMap(response => from(response.json())),
 );
 
+// Create streams for the close buttons
+const close1 = document.getElementById('close-suggestion-0');
+const close1ClickStream = fromEvent(close1, 'click');
+
+// TODO: Refactor to DRY up
 // Create a stream for each suggestion
-const suggestion1Stream = usersApiResponseStream.pipe(
-  map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 0 }))
+const suggestion1Stream = close1ClickStream.pipe(
+  startWith('init click'),
+  combineLatest(usersApiResponseStream, (_click, users) => {
+    return { user: users[Math.floor(Math.random() * users.length)], index: 0 };
+  })
 );
+// const suggestion1Stream = usersApiResponseStream.pipe(
+//   map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 0 }))
+// );
 const suggestion2Stream = usersApiResponseStream.pipe(
   map(users => ({ user: users[Math.floor(Math.random() * users.length)], index: 1 }))
 );

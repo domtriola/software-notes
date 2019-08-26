@@ -23,6 +23,11 @@ export const el = (
 
 export const createUserList = (parent) => {
   const userList = el('div');
+
+  for (let i = 0; i < 3; i++) {
+    createUserSuggestion(userList, { login: null }, i);
+  }
+
   parent.appendChild(userList);
   return userList;
 };
