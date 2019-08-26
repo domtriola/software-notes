@@ -3,6 +3,7 @@ import { map, mergeMap, combineLatest, startWith } from 'rxjs/operators';
 import { createUserList, createUserSuggestion, createRefreshButton, updateUserSuggestion } from './renderer';
 
 const GITHUB_USERS_API = 'https://api.github.com/users';
+const SUGGESTION_COUNT = 3;
 
 // Render HTML scaffold
 const root = document.getElementById('root');
@@ -29,50 +30,21 @@ const usersApiResponseStream = usersApiRequestStream.pipe(
 );
 
 // Create streams for the close buttons
-const close1 = document.getElementById('close-suggestion-0');
-const close1ClickStream = fromEvent(close1, 'click');
-const close2 = document.getElementById('close-suggestion-1');
-const close2ClickStream = fromEvent(close2, 'click');
-const close3 = document.getElementById('close-suggestion-2');
-const close3ClickStream = fromEvent(close3, 'click');
+for (let i = 0; i < SUGGESTION_COUNT; i++) {
+  const closeButton = document.getElementById(`close-suggestion-${i}`);
+  const closeClickStream = fromEvent(closeButton, 'click');
 
-// TODO: Refactor to DRY up
-// Create a stream for each suggestion
-const suggestion1Stream = close1ClickStream.pipe(
-  startWith('init click'),
-  combineLatest(usersApiResponseStream, (_click, users) => {
-    return { user: users[Math.floor(Math.random() * users.length)], index: 0 };
-  })
-);
-const suggestion2Stream = close2ClickStream.pipe(
-  startWith('init click'),
-  combineLatest(usersApiResponseStream, (_click, users) => {
-    return { user: users[Math.floor(Math.random() * users.length)], index: 1 };
-  })
-);
-const suggestion3Stream = close3ClickStream.pipe(
-  startWith('init click'),
-  combineLatest(usersApiResponseStream, (_click, users) => {
-    return { user: users[Math.floor(Math.random() * users.length)], index: 2 };
-  })
-);
+  const suggestionStream = closeClickStream.pipe(
+    startWith('init click'),
+    combineLatest(usersApiResponseStream, (_click, users) => {
+      return { user: users[Math.floor(Math.random() * users.length)], index: i };
+    })
+  );
 
-// Subscribe to response stream to do something with the outputs
-suggestion1Stream.subscribe(({ user, index }) => {
-  const updatedSuggestion = updateUserSuggestion(index, user.login);
-  if (!updatedSuggestion) {
-    createUserSuggestion(userList, user, index);
-  }
-});
-suggestion2Stream.subscribe(({ user, index }) => {
-  const updatedSuggestion = updateUserSuggestion(index, user.login);
-  if (!updatedSuggestion) {
-    createUserSuggestion(userList, user, index);
-  }
-});
-suggestion3Stream.subscribe(({ user, index }) => {
-  const updatedSuggestion = updateUserSuggestion(index, user.login);
-  if (!updatedSuggestion) {
-    createUserSuggestion(userList, user, index);
-  }
-});
+  suggestionStream.subscribe(({ user, index }) => {
+    const updatedSuggestion = updateUserSuggestion(index, user.login);
+    if (!updatedSuggestion) {
+      createUserSuggestion(userList, user, index);
+    }
+  });
+}
