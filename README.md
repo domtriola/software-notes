@@ -11,6 +11,7 @@
     * [Graph](./theory/data_structures/graph)
       * [Tree](./theory/data_structures/graph/tree)
         * [Binary Tree](./theory/data_structures/graph/tree/binary_tree)
+  * [Statistics](./theory/statistics)
 * [Languages](./languages)
   * [Bash](./languages/bash)
   * [C++](./languages/c++)
