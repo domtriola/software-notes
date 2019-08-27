@@ -12,6 +12,7 @@
       * [Tree](./theory/data_structures/graph/tree)
         * [Binary Tree](./theory/data_structures/graph/tree/binary_tree)
 * [Languages](./languages)
+  * [Bash](./languages/bash)
   * [C++](./languages/c++)
   * [Go](./languages/go)
   * [Io](./languages/io)
