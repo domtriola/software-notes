@@ -1,7 +1,7 @@
 import math
 from collections import defaultdict
 
-def min_mode(nums, n):
+def min_mode(nums):
     counts = defaultdict(int)
     for num in nums:
         counts[num] += 1

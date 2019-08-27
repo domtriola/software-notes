@@ -1,5 +1,4 @@
-def mean(nums):
-    return sum(nums) / len(nums)
+from theory.statistics.mean import mean
 
 def standard_deviation(nums):
     n = len(nums)
