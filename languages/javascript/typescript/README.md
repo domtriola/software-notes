@@ -15,5 +15,5 @@ tsc -p tsconfig.json # (--project <path>)
 ## Run
 
 ```bash
-node build/example.js
+node build/basics.js
 ```
