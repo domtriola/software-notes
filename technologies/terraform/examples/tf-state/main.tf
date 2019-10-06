@@ -46,4 +46,20 @@ resource "aws_s3_bucket" "terraform_state" {
   lifecycle {
     prevent_destroy = true
   }
+
+  lifecycle_rule {
+    enabled = true
+
+    noncurrent_version_expiration {
+      days = 14
+    }
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "terraform_state_block" {
+  bucket = "${aws_s3_bucket.terraform_state.id}"
+
+  block_public_acls   = true
+  block_public_policy = true
+  ignore_public_acls  = true
 }
