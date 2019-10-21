@@ -1,9 +1,10 @@
 package main
 
-// Notes from https://www.manning.com/books/go-in-practice
+// Notes from: https://www.manning.com/books/go-in-practice
 
 import (
 	"fmt"
+	"runtime"
 	"time"
 )
 
@@ -17,7 +18,7 @@ func printNums(c chan int) {
 	}
 }
 
-func main() {
+func BasicExample() {
 	// Create a channel
 	c := make(chan int)
 	// Include -1 to eventually stop channel from listening
@@ -32,4 +33,27 @@ func main() {
 	fmt.Println("This will print just before the last number, because of the delay before the printNums Print command")
 	// If we don't sleep here the program will exit before the last -1 is printed
 	time.Sleep(time.Millisecond * 101)
+}
+
+func DelayWithClosure() {
+	fmt.Println("Do something now")
+
+	go func() {
+		fmt.Println("Do something eventually")
+	}()
+
+	fmt.Println("Do something now")
+
+	// Yield to scheduler by sleeping
+	time.Sleep(time.Millisecond * 1)
+}
+
+func main() {
+	BasicExample()
+
+	// Yield to scheduler so we print the last of the basic example async stuff
+	// before moving on to the next method
+	runtime.Gosched()
+
+	DelayWithClosure()
 }
