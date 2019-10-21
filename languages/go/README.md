@@ -19,7 +19,7 @@ Go is a statically typed imperative language with a C-like syntax. It is attempt
   * or `go install` creates executables in `bin/`
 * Clean up: `go clean -i`
 * Run a single file: `go run path/filename.go`
-* [Package Management](https://github.com/Masterminds/glide)
+* [Package Management](https://github.com/golang/go/wiki/Modules)
 * Find docs for any package or module: `go doc <package>.<Module>`
 
 ## Key Features

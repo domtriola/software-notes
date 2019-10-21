@@ -1,6 +1,7 @@
-The default go path is `$HOME/go`, but the folder structure here is set up such that the GOPATH should be `$THIS_REPO_LOCATION/languages/go`. I did this to consolidate all Go notes for this repo into one location, but typically you would have separate repos for each package and manage dependencies within each package. See https://github.com/Masterminds/glide#how-it-works for project structure example.
+# Go Examples
+
+The default go path is `$HOME/go`. If we didn't initialize this as a go module we would have to update the go path to be `$THIS_REPO_LOCATION/languages/go`. But go modules allow the project to be at a different path without modifying the default go path. The `go.mod` file was created with `go mod init github.com/software-notes/languages/go`.
 
 To run examples:
-* `export GOPATH=/<repolocation>/languages/go`
-* `glide install`
+
 * `go run path/to/program.go`
