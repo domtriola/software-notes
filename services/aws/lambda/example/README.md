@@ -23,3 +23,9 @@ cd terraform
 terraform init
 terraform apply
 ```
+
+## Test
+
+https://ibxhbx86vf.execute-api.us-east-1.amazonaws.com/test
+
+Or invoke manually in AWS console
