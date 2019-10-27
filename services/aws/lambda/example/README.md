@@ -34,4 +34,5 @@ Or invoke manually in AWS console
 
 ```bash
 terraform destroy -var="app_version=1.0.1"
+aws s3 rb s3://terraform-serverless-example-domt --force
 ```
