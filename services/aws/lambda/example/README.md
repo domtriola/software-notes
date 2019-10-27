@@ -26,6 +26,6 @@ terraform apply -var="app_version=1.0.1"
 
 ## Test
 
-https://ibxhbx86vf.execute-api.us-east-1.amazonaws.com/test
+Visit output URL from `terraform apply`
 
 Or invoke manually in AWS console
