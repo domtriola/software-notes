@@ -10,7 +10,7 @@ Create the lambda bucket if it doesn't already exist:
 aws s3api create-bucket --bucket=terraform-serverless-example-domt --region=us-east-1
 ```
 
-Run `build` to zip and deploy the lambda code:
+Run `build` to zip and deploy the lambda code. Update version in `build.sh` to deploy a new version.
 
 ```bash
 ./build.sh
@@ -21,7 +21,7 @@ Deploy terraform infrastructure:
 ```bash
 cd terraform
 terraform init
-terraform apply
+terraform apply -var="app_version=1.0.1"
 ```
 
 ## Test
