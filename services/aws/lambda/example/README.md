@@ -29,3 +29,9 @@ terraform apply -var="app_version=1.0.1"
 Visit output URL from `terraform apply`
 
 Or invoke manually in AWS console
+
+## Cleanup
+
+```bash
+terraform destroy -var="app_version=1.0.1"
+```
