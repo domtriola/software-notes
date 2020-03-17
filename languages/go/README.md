@@ -29,7 +29,9 @@ Go is a statically typed imperative language with a C-like syntax. It is attempt
 
 ### Concurrency
 
-### Channels
+Go's Communicating Sequential Processes (CSP) concurrency approach uses goroutines and channels. A **goroutine** is a function that is called by another function, but runs independent of its caller. A **channel** is a pipeline that functions can use to pass data to each other.
+
+[Examples](./src/concurrency)
 
 ### Pointers
 
@@ -44,6 +46,7 @@ See [pointers.go](./src/pointers/pointers.go) for examples.
 You can use the `new` function to create a new variable but return only a pointer to it.
 
 For example:
+
 ```go
 func newInt() *int {
   var num int
