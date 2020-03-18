@@ -29,6 +29,11 @@ func main() {
 	fmt.Printf("uniques: %v\n", uniques)
 
 	fmt.Printf("-------------------------------\n")
+	fmt.Printf("Flatten:\n")
+	flat := flatten([]interface{}{0, []interface{}{1, 2, 3}, []interface{}{4, 5, []interface{}{6}}})
+	fmt.Printf("flat: %v\n", flat)
+
+	fmt.Printf("-------------------------------\n")
 	fmt.Printf("FizzBuzz:\n")
 	fizzBuzz(16)
 
@@ -77,6 +82,21 @@ func unique(arr []string) []string {
 }
 
 // Flatten
+func flatten(arr []interface{}) []int {
+	result := []int{}
+
+	for _, el := range arr {
+		e, ok := el.(int)
+		if !ok {
+			n := flatten(el.([]interface{}))
+			result = append(result, n...)
+		} else {
+			result = append(result, e)
+		}
+	}
+
+	return result
+}
 
 // Fizz-Buzz
 func fizzBuzz(max int) {
