@@ -1,12 +1,12 @@
 package main
 
-// Notes from: https://www.manning.com/books/go-in-practice
-
 import (
 	"fmt"
 	"runtime"
 	"time"
 )
+
+// Notes from: https://www.manning.com/books/go-in-practice
 
 func printNums(c chan int) {
 	num := 0
@@ -18,7 +18,7 @@ func printNums(c chan int) {
 	}
 }
 
-func BasicExample() {
+func basicExample() {
 	// Create a channel
 	c := make(chan int)
 	// Include -1 to eventually stop channel from listening
@@ -35,7 +35,7 @@ func BasicExample() {
 	time.Sleep(time.Millisecond * 101)
 }
 
-func DelayWithClosure() {
+func delayWithClosure() {
 	fmt.Println("Do something now")
 
 	go func() {
@@ -49,11 +49,11 @@ func DelayWithClosure() {
 }
 
 func main() {
-	BasicExample()
+	basicExample()
 
 	// Yield to scheduler so we print the last of the basic example async stuff
 	// before moving on to the next method
 	runtime.Gosched()
 
-	DelayWithClosure()
+	delayWithClosure()
 }
