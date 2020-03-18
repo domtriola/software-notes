@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+// Notes from: https://www.manning.com/books/go-in-practice
+
 /*
  * Basic channel example
  ************************************/

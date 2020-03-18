@@ -1,12 +1,12 @@
 package main
 
-// Notes from: https://www.manning.com/books/go-in-practice
-
 import (
 	"fmt"
 	"runtime"
 	"time"
 )
+
+// Notes from: https://www.manning.com/books/go-in-practice
 
 func printNums(c chan int) {
 	num := 0
