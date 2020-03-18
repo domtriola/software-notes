@@ -11,7 +11,7 @@ import (
 // An example of using a Wait Group
 // Notes from: https://www.manning.com/books/go-in-practice
 
-// go run main.go example_files/*
+// go run main.go ../example_files/*
 
 func compress(filename string) error {
 	in, err := os.Open(filename)

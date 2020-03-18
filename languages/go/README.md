@@ -33,6 +33,8 @@ Go's Communicating Sequential Processes (CSP) concurrency approach uses goroutin
 
 [Examples](./src/concurrency)
 
+***If you suspect a race condition in your code, try calling your program with the --race flag to get more detailed info on if it is one and where it might be originating from.***
+
 ### Pointers
 
 There are a few cases for which pointers can be used in Go:
