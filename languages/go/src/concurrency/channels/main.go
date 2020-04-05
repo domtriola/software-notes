@@ -96,10 +96,6 @@ func send(ch chan<- string, done <-chan bool) {
 	}
 }
 
-/*
- * Closing channels
- ***************************/
-
 // Channels can be used as locks if needed to be, but sync is probably preferred
 // in most scenarios
 func channelLock() {

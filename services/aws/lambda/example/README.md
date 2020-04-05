@@ -1,6 +1,6 @@
 # AWS Lambda with Terraform
 
-Example from: https://learn.hashicorp.com/terraform/aws/lambda-api-gateway
+Example is from [https://learn.hashicorp.com/terraform/aws/lambda-api-gateway](https://learn.hashicorp.com/terraform/aws/lambda-api-gateway)
 
 ## Setup
 
