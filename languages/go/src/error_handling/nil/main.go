@@ -28,10 +28,10 @@ func main() {
 	fmt.Printf("concated lists: %v\n", normalResult)
 
 	// NOTE: We don't even have to care about the error if we know we'll always get
-	// a valid output. Now we could safely try to iterate over the output without
+	// a valid output. Now we can safely try to iterate over the output without
 	// worrying about crashing, even if there was an error returned by concat.
-	// (In practice we should still care about the error though, to avoid
-	// unexpected bugs)
+	// (In practice this is not recommended and we should still care about the
+	// error to avoid unexpected bugs)
 	nothingConcated, _ := concat(emptyInput...)
 	fmt.Printf("concated lists: %v\n", nothingConcated)
 }
