@@ -24,12 +24,11 @@ An easy way to test the waters is to add a single `'` to your input string. If S
 SQL injection can be prevented by sanitizing all data that comes from outside (and inside) your application or by using [prepared statements](https://en.wikipedia.org/wiki/Prepared_statement). Prepared statements usually look something like:
 
 ```go
+// Good
+// using a prepared statement
 db.Query("SELECT * FROM users WHERE email = ? and password_hash = ?", email, hash)
-```
 
-What not to do:
-
-```go
 // Bad
+// email and/or hash can be used to create arbitrary SQL statements
 db.Query("SELECT * FROM users WHERE email = " + email + "and password_hash = " + hash)
 ```

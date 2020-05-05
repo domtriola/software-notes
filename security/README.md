@@ -1,6 +1,6 @@
 # Security
 
-This is a compilation of notes on software and internet related security.
+This is a compilation of notes on software and web related security.
 
 ## OWASP Top Ten
 
@@ -9,7 +9,8 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 ## Top 10 as of 2020
 
 1. Injection
-    * [SQL Injection](./sql_injection.md)
+    * [SQL Injection](./injection/sql_injection.md)
+    * [Command Injection](./injection/command_injection)
 2. Broken Authentication
 3. Sensitive Data Exposure
 4. XML External Entities (XXE)
