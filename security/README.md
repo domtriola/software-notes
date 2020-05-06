@@ -13,6 +13,7 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
     * [Command Injection](./injection/command_injection)
 2. [Broken Authentication](./broken_authentication)
     * [Session Fixation](./broken_authentication/session_fixation.md)
+    * [Insufficiently Random Values](./broken_authentication/insufficiently_random_values.md)
 3. Sensitive Data Exposure
 4. XML External Entities (XXE)
 5. Broken Access Control
