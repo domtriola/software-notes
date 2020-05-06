@@ -20,6 +20,7 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 6. Security Misconfiguration
 7. [Cross-Site Scripting (XSS)](./cross_site_scripting)
     * [Reflected XSS](./cross_site_scripting/reflected_xss.md)
+    * [Stored XSS](./cross_site_scripting/stored_xss.md)
 8. Insecure Deserialization
 9. Using Components with Known Vulnerabilities
 10. Insufficient Logging & Monitoring
