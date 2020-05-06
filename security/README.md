@@ -6,7 +6,7 @@ This is a compilation of notes on software and web related security.
 
 The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 most critical security risks to web applications.
 
-## Top 10 as of 2020
+### Top 10 as of 2020
 
 1. [Injection](./injection)
     * [SQL Injection](./injection/sql_injection.md)
@@ -18,7 +18,8 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 4. XML External Entities (XXE)
 5. Broken Access Control
 6. Security Misconfiguration
-7. Cross-Site Scripting XSS
+7. [Cross-Site Scripting (XSS)](./cross_site_scripting)
+    * [Reflected XSS](./cross_site_scripting/reflected_xss.md)
 8. Insecure Deserialization
 9. Using Components with Known Vulnerabilities
 10. Insufficient Logging & Monitoring
