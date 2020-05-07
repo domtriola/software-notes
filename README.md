@@ -27,5 +27,6 @@
   * [GraphQL](./technologies/graphql)
   * [Terraform](./technologies/terraform)
 * [Security](./security)
+  * [Web](./security/web)
 * [Services](./services)
   * [Amazon Web Services](./services/aws)
