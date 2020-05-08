@@ -1,6 +1,6 @@
 # Cross Site Request Forgery (CSRF) POST
 
-A CSRF attack is when someone makes a request as a user on a different site without that user knowingly prompting the request. This works if the user is already authenticated with the target site via cookies, because browsers will automatically attach a site's cookies to any requests to that site.
+A POST CSRF attack is when someone makes a POST request as a user on a different site without that user knowingly prompting the request. This works if the user is already authenticated with the target site via cookies, because browsers will automatically attach a site's cookies to any requests to that site.
 
 [No need for CSRF protection with APIs that don't use cookies](https://security.stackexchange.com/questions/166724/should-i-use-csrf-protection-on-rest-api-endpoints#comment338757_166798)
 
