@@ -16,6 +16,7 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
     * [Insufficiently Random Values](./broken_authentication/insufficiently_random_values.md)
 3. [Sensitive Data Exposure](./sensitive_data_exposure)
     * [Authentication Credentials in URL](./sensitive_data_exposure/authentication_credentials_in_url.md)
+    * [Session Exposure in URL](./sensitive_data_exposure/session_exposure_in_url.md)
 4. XML External Entities (XXE)
 5. Broken Access Control
 6. [Security Misconfiguration](./security_misconfiguration)

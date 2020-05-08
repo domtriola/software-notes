@@ -8,7 +8,7 @@ Look for credentials in GET requests.
 
 ## Blue Team
 
-Don't send credentials over GET requests and don't use HTTP. Instead use POST data to send credentials and always use HTTPS. GET requests are more likely to expose credentials, because they are often stored in browser histories, bookmarks, referrer headers, upstream proxy logs, and the web application logs.
+Don't send credentials over GET requests and don't use HTTP. Instead use POST data to send credentials and always use HTTPS. GET requests are more likely to expose credentials, because they are often stored in browser histories, bookmarks, referrer headers, upstream proxy logs, web application logs, and many more potential places.
 
 ```bash
 # Good
