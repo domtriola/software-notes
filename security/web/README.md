@@ -25,3 +25,7 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 8. Insecure Deserialization
 9. Using Components with Known Vulnerabilities
 10. Insufficient Logging & Monitoring
+
+## More Vulnerabilities
+
+* [Path (Directory) Traversal](./path_traversal)
