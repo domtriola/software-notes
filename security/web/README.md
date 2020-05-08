@@ -36,3 +36,7 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 ## More Vulnerabilities
 
 * [Path (Directory) Traversal](./path_traversal)
+* [Cross Site Request Forgery](./cross_site_request_forgery)
+  * [CSRF POST](./cross_site_request_forgery/csrf_post.md)
+  * [CSRF GET](./cross_site_request_forgery/csrf_get.md)
+  * [Clickjacking](./cross_site_request_forgery/clickjacking.md)
