@@ -19,7 +19,9 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
     * [Session Exposure in URL](./sensitive_data_exposure/session_exposure_in_url.md)
     * [User Enumeration](./sensitive_data_exposure/user_enumeration.md)
 4. XML External Entities (XXE)
-5. Broken Access Control
+5. [Broken Access Control](./broken_access_control)
+    * [Horizontal Access Control](./broken_access_control/horizontal_access_control.md)
+    * [Vertical Access Control](./broken_access_control/vertical_access_control.md)
 6. [Security Misconfiguration](./security_misconfiguration)
     * [Privileged Interface Exposure](./security_misconfiguration/privileged_interface_exposure.md)
     * [Residual Debug Code](./security_misconfiguration/residual_debug_code.md)
