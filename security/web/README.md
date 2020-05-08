@@ -17,7 +17,9 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 3. Sensitive Data Exposure
 4. XML External Entities (XXE)
 5. Broken Access Control
-6. Security Misconfiguration
+6. [Security Misconfiguration](./security_misconfiguration)
+    * [Privileged Interface Exposure](./security_misconfiguration/privileged_interface_exposure.md)
+    * [Residual Debug Code](./security_misconfiguration/residual_debug_code.md)
 7. [Cross-Site Scripting (XSS)](./cross_site_scripting)
     * [Reflected XSS](./cross_site_scripting/reflected_xss.md)
     * [Stored XSS](./cross_site_scripting/stored_xss.md)
