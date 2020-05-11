@@ -47,3 +47,4 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
 * [Insecure Caching](./insecure_caching)
   * [Cache Poisoning](./insecure_caching/cache_poisoning.md)
   * [Web Cache Deception](./insecure_caching/web_cache_deception.md)
+* [Reverse Tabnabbing](./reverse_tabnabbing.md)
