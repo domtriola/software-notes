@@ -44,3 +44,6 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
   * [Insecure URL Redirect](./insecure_url_redirect.md)
 * [Insecure TLS Validation](./insecure_tls_validation)
   * [TLS Misconfigurations](./insecure_tls_validation/tls_misconfigurations.md)
+* [Insecure Caching](./insecure_caching)
+  * [Cache Poisoning](./insecure_caching/cache_poisoning.md)
+  * [Web Cache Deception](./insecure_caching/web_cache_deception.md)
