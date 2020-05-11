@@ -42,3 +42,5 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
   * [Clickjacking](./cross_site_request_forgery/clickjacking.md)
 * [Unvalidated Redirects and Forwards](./unvalidated_redirects_and_forwards)
   * [Insecure URL Redirect](./insecure_url_redirect.md)
+* [Insecure TLS Validation](./insecure_tls_validation)
+  * [TLS Misconfigurations](./insecure_tls_validation/tls_misconfigurations.md)
