@@ -30,7 +30,7 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
     * [Stored XSS](./cross_site_scripting/stored_xss.md)
     * [DOM XSS](./cross_site_scripting/dom_xss.md)
 8. Insecure Deserialization
-9. Using Components with Known Vulnerabilities
+9. [Using Components with Known Vulnerabilities](./using_components_with_known_vulnerabilities.md)
 10. Insufficient Logging & Monitoring
 
 ## More Vulnerabilities
