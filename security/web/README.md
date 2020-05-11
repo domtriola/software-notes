@@ -40,3 +40,5 @@ The [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is a list of the 10 
   * [CSRF POST](./cross_site_request_forgery/csrf_post.md)
   * [CSRF GET](./cross_site_request_forgery/csrf_get.md)
   * [Clickjacking](./cross_site_request_forgery/clickjacking.md)
+* [Unvalidated Redirects and Forwards](./unvalidated_redirects_and_forwards)
+  * [Insecure URL Redirect](./insecure_url_redirect.md)
