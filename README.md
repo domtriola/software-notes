@@ -28,5 +28,6 @@
   * [Terraform](./technologies/terraform)
 * [Security](./security)
   * [Web](./security/web)
+  * [AWS](./security/aws)
 * [Services](./services)
   * [Amazon Web Services](./services/aws)
