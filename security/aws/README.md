@@ -1,8 +1,10 @@
 # AWS Specific Security Flaws
 
-[flaws.cloud exercises](./flaws_cloud)
+## Dos
 
-## General Dos and Don'ts
+* Rotate AWS access keys often
+
+## Don'ts
 
 * Don't commit AWS access keys to source code
-* Rotate AWS access keys often
+* Don't accidentally post AWS access keys anywhere when copy-pasting info
