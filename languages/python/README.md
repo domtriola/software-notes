@@ -19,6 +19,8 @@ Python is often compared to Ruby, because they are human readable, high level, o
 * Run python in an interpreter: `python`
 * Import modules and packages in projects: `import MODULE from PACKAGE`
 * Use [pip](https://pypi.python.org/pypi/pip) to manage your dependencies
+* Use `pyenv` and `pyenv-virtualenv` to manage python versions and environments
+  * Tip: `pyenv global system && cd ~/ && pyenv local <desired_version>` to use pyenv versions everywhere
 
 ## Key Features
 
