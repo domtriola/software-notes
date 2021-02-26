@@ -25,6 +25,7 @@
 * [Technologies](./technologies)
   * [Docker](./technologies/docker)
   * [GraphQL](./technologies/graphql)
+  * [Spark](./technologies/spark)
   * [Terraform](./technologies/terraform)
 * [Security](./security)
   * [Web](./security/web)
