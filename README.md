@@ -22,6 +22,7 @@
     * [TypeScript](./languages/javascript/typescript)
   * [Python](./languages/python)
   * [Ruby](./languages/ruby)
+  * [Scala](./languages/scala)
 * [Technologies](./technologies)
   * [Docker](./technologies/docker)
   * [GraphQL](./technologies/graphql)
