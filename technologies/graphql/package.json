@@ -12,7 +12,7 @@
   "author": "Dominick Triola <dominicktriola@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-graphql": "^0.8.0",
     "fs": "0.0.1-security",
     "graphql": "^14.2.1",
