@@ -19,3 +19,7 @@ __pycache__
 # Obsidian
 #####################
 .obsidian
+
+# Misc
+#####################
+_local
